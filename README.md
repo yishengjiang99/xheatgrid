@@ -7,7 +7,7 @@ Chrome extension that reads the `x.com/i/account_analytics` activity chart, extr
 1. Open `chrome://extensions`.
 2. Enable Developer mode.
 3. Click Load unpacked.
-4. Select `/Users/yishengj/xheatgrid`.
+4. Select `~/Downloads/xheatgrid`.
 
 ## How it works
 
