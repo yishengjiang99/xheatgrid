@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "X Analytics Heatmap",
+  "version": "0.1.0",
+  "description": "Reads X account analytics and renders a GitHub-style heatmap for daily posts and replies.",
+  "permissions": [],
+  "host_permissions": [
+    "https://x.com/*",
+    "https://twitter.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://x.com/*",
+        "https://twitter.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "heatmap.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
