@@ -3,7 +3,7 @@
   const STYLE_READY_CLASS = "xheatgrid-ready";
   const ANALYTICS_PATH_RE = /\/i\/account_analytics(?:\/|$)/;
   const DAY_MS = 24 * 60 * 60 * 1000;
-  const BUILD_VERSION = "v0.1.12";
+  const BUILD_VERSION = "v0.1.14";
 
   let lastSignature = "";
   let lastUrl = typeof location !== "undefined" ? location.href : "";
@@ -24,16 +24,19 @@
       return;
     }
 
-    const chart = findAnalyticsChart();
-    if (!chart) {
+    const rangeDays = getSelectedRangeDays();
+    const chartSelection = findAnalyticsChart(rangeDays);
+    if (!chartSelection) {
       disconnectChartSurfaceObserver();
       removePanel("Waiting for analytics chart...");
       return;
     }
 
+    const { container: chart, series: preParsedSeries } = chartSelection;
     observeChartSurface(chart);
-    const rangeDays = getSelectedRangeDays();
-    const series = clampSeriesToRange(extractSeries(chart), rangeDays);
+    const series = preParsedSeries.length
+      ? preParsedSeries
+      : clampSeriesToRange(extractSeries(chart), rangeDays);
     if (!series.length) {
       console.log("[xheatgrid] parsed days: 0");
       removePanel("Unable to extract daily posts/replies yet.");
@@ -93,33 +96,93 @@
     observedChartSurface = null;
   }
 
-  function findAnalyticsChart() {
+  function findAnalyticsChart(rangeDays) {
     const buttons = Array.from(document.querySelectorAll("button[aria-label='Posts']"));
+    const seenContainers = new Set();
     const candidates = [];
+    const minExpectedDays = getMinimumExpectedDays(rangeDays);
     for (const postsButton of buttons) {
       const container = postsButton.closest("div[class*='rounded-2xl']");
-      if (!container) {
+      if (!container || seenContainers.has(container)) {
         continue;
       }
+      seenContainers.add(container);
+
       const repliesButton = container.querySelector("button[aria-label='Replies']");
       const svg = container.querySelector("svg.recharts-surface");
       if (!repliesButton || !svg) {
         continue;
       }
 
+      const barGroupCount = svg.querySelectorAll(":scope > g.recharts-layer.recharts-bar").length;
+      if (barGroupCount < 2) {
+        continue;
+      }
+
+      const series = clampSeriesToRange(extractSeries(container), rangeDays);
+      const dayCount = series.length;
+      if (dayCount > 0 && dayCount < minExpectedDays) {
+        continue;
+      }
+
       const area = getSvgArea(svg);
       const rectangleCount = svg.querySelectorAll(".recharts-bar-rectangle path.recharts-rectangle").length;
+      const tickCount = svg.querySelectorAll(".recharts-xAxis .recharts-cartesian-axis-tick").length;
+      const distanceFromRange = Number.isFinite(rangeDays) ? Math.abs(dayCount - rangeDays) : 0;
+      const visibilityBonus = isElementVisible(svg) ? 1 : 0;
+
       candidates.push({
         container,
-        score: area + rectangleCount * 10
+        series,
+        score:
+          dayCount * 5000
+          - distanceFromRange * 3000
+          + tickCount * 40
+          + rectangleCount * 10
+          + area * 0.01
+          + visibilityBonus * 2000
       });
     }
 
     candidates.sort((a, b) => b.score - a.score);
     if (candidates.length) {
-      return candidates[0].container;
+      return {
+        container: candidates[0].container,
+        series: candidates[0].series
+      };
     }
     return null;
+  }
+
+  function getMinimumExpectedDays(rangeDays) {
+    if (!Number.isFinite(rangeDays) || rangeDays <= 0) {
+      return 1;
+    }
+
+    if (rangeDays >= 60) {
+      return Math.ceil(rangeDays * 0.6);
+    }
+    if (rangeDays >= 28) {
+      return Math.ceil(rangeDays * 0.75);
+    }
+    if (rangeDays >= 14) {
+      return Math.ceil(rangeDays * 0.8);
+    }
+    return Math.ceil(rangeDays * 0.8);
+  }
+
+  function isElementVisible(node) {
+    if (!node || typeof node.getBoundingClientRect !== "function") {
+      return false;
+    }
+
+    const rect = node.getBoundingClientRect();
+    if (rect.width <= 0 || rect.height <= 0) {
+      return false;
+    }
+
+    const style = window.getComputedStyle(node);
+    return style.display !== "none" && style.visibility !== "hidden";
   }
 
   function getSvgArea(svg) {
@@ -952,7 +1015,7 @@
       { label: "7D", days: 7 },
       { label: "2W", days: 14 },
       { label: "4W", days: 28 },
-      { label: "3M", days: 92 },
+      { label: "3M", days: 90 },
       { label: "1Y", days: 366 }
     ];
 
