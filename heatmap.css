@@ -1,7 +1,10 @@
 #xheatgrid-panel {
-  margin: 16px;
-  position: relative;
-  z-index: 10;
+  bottom: 14px;
+  margin: 0;
+  position: fixed;
+  right: 14px;
+  width: min(420px, calc(100vw - 20px));
+  z-index: 2147483647;
 }
 
 .xheatgrid-card {
@@ -11,7 +14,9 @@
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.22);
   color: #eef2f7;
   font-family: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas, monospace;
-  padding: 18px;
+  max-height: min(78vh, 540px);
+  overflow: hidden;
+  padding: 14px;
 }
 
 .xheatgrid-header {
@@ -19,7 +24,7 @@
   display: flex;
   gap: 16px;
   justify-content: space-between;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
 
 .xheatgrid-header h2 {
@@ -69,7 +74,7 @@
   display: grid;
   gap: 10px;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  margin-bottom: 18px;
+  margin-bottom: 12px;
 }
 
 .xheatgrid-summary div {
@@ -92,7 +97,9 @@
 }
 
 .xheatgrid-scroll {
+  max-height: min(44vh, 300px);
   overflow-x: auto;
+  overflow-y: visible;
   padding-bottom: 4px;
 }
 
@@ -156,6 +163,7 @@
   height: 12px;
   margin: 0;
   padding: 0;
+  position: relative;
   width: 12px;
 }
 
@@ -163,14 +171,52 @@
   --cell-color: #161b22;
 }
 
+.xheatgrid-cell:hover::after,
+.xheatgrid-cell:focus-visible::after {
+  background: #0b1018;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 8px;
+  bottom: calc(100% + 7px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+  color: #eef2f7;
+  content: attr(data-tooltip);
+  font-size: 10px;
+  left: 50%;
+  line-height: 1.35;
+  min-width: max-content;
+  padding: 6px 8px;
+  pointer-events: none;
+  position: absolute;
+  transform: translateX(-50%);
+  white-space: pre;
+  z-index: 30;
+}
+
+.xheatgrid-cell:hover::before,
+.xheatgrid-cell:focus-visible::before {
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid rgba(255, 255, 255, 0.18);
+  bottom: calc(100% + 1px);
+  content: "";
+  left: 50%;
+  pointer-events: none;
+  position: absolute;
+  transform: translateX(-50%);
+  z-index: 31;
+}
+
 @media (max-width: 768px) {
   #xheatgrid-panel {
-    margin: 12px;
+    bottom: 10px;
+    right: 10px;
+    width: calc(100vw - 16px);
   }
 
   .xheatgrid-card {
     border-radius: 16px;
-    padding: 14px;
+    max-height: 76vh;
+    padding: 12px;
   }
 
   .xheatgrid-header,

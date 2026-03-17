@@ -1,0 +1,263 @@
+<svg xmlns="http://www.w3.org/2000/svg" class="recharts-surface" width="455" height="140"
+    viewBox="0 0 455 140" style="width: 100%; height: 100%;">
+
+    <title></title>
+    <desc></desc>
+    <defs>
+        <clipPath id="recharts7-clip">
+            <rect x="50" y="5" height="100" width="395"></rect>
+        </clipPath>
+    </defs>
+    <g class="recharts-layer recharts-cartesian-axis recharts-yAxis yAxis text-subtext3">
+        <g class="recharts-cartesian-axis-ticks">
+            <g class="recharts-layer recharts-cartesian-axis-tick">
+                <text orientation="left" width="60" height="100" stroke="none" x="42" y="105"
+                    class="recharts-text recharts-cartesian-axis-tick-value" text-anchor="end"
+                    fill="hsl(var(--color-gray-600))">
+                    <tspan x="42" dy="0.355em">0</tspan>
+                </text>
+            </g>
+            <g class="recharts-layer recharts-cartesian-axis-tick">
+                <text orientation="left" width="60" height="100" stroke="none" x="42"
+                    y="71.66666666666669" class="recharts-text recharts-cartesian-axis-tick-value"
+                    text-anchor="end" fill="hsl(var(--color-gray-600))">
+                    <tspan x="42" dy="0.355em">15</tspan>
+                </text>
+            </g>
+            <g class="recharts-layer recharts-cartesian-axis-tick">
+                <text orientation="left" width="60" height="100" stroke="none" x="42"
+                    y="38.33333333333334" class="recharts-text recharts-cartesian-axis-tick-value"
+                    text-anchor="end" fill="hsl(var(--color-gray-600))">
+                    <tspan x="42" dy="0.355em">30</tspan>
+                </text>
+            </g>
+            <g class="recharts-layer recharts-cartesian-axis-tick">
+                <text orientation="left" width="60" height="100" stroke="none" x="42" y="8.25"
+                    class="recharts-text recharts-cartesian-axis-tick-value" text-anchor="end"
+                    fill="hsl(var(--color-gray-600))">
+                    <tspan x="42" dy="0.355em">45</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+    <g class="recharts-cartesian-grid">
+        <g class="recharts-cartesian-grid-horizontal">
+            <line stroke-opacity="1" stroke="hsl(var(--color-gray-100))" fill="none" x="50" y="5"
+                width="395" height="100" x1="50" y1="105" x2="445" y2="105"></line>
+            <line stroke-opacity="1" stroke="hsl(var(--color-gray-100))" fill="none" x="50" y="5"
+                width="395" height="100" x1="50" y1="71.66666666666669" x2="445"
+                y2="71.66666666666669"></line>
+            <line stroke-opacity="1" stroke="hsl(var(--color-gray-100))" fill="none" x="50" y="5"
+                width="395" height="100" x1="50" y1="38.33333333333334" x2="445"
+                y2="38.33333333333334"></line>
+            <line stroke-opacity="1" stroke="hsl(var(--color-gray-100))" fill="none" x="50" y="5"
+                width="395" height="100" x1="50" y1="5" x2="445" y2="5"></line>
+        </g>
+    </g>
+    <g class="recharts-layer recharts-bar">
+        <g class="recharts-layer recharts-bar-rectangles">
+            <g class="recharts-layer">
+                <g class="recharts-layer recharts-bar-rectangle">
+                    <path x="397.0357142857143" y="100.55555555555557" width="16"
+                        height="4.444444444444429" radius="2" fill="var(--color-Posts)"
+                        stroke-width="3" class="recharts-rectangle"
+                        d="M 397.0357142857143,102.55555555555557
+            A 2,2,0,0,1,399.0357142857143,100.55555555555557
+            L 411.0357142857143,100.55555555555557
+            A 2,2,0,0,1,413.0357142857143,102.55555555555557
+            L 413.0357142857143,103
+            A 2,2,0,0,1,411.0357142857143,105
+            L 399.0357142857143,105
+            A 2,2,0,0,1,397.0357142857143,103 Z"></path>
+                </g>
+                <g class="recharts-layer recharts-bar-rectangle">
+                    <path x="340.6071428571429" y="96.11111111111111" width="16"
+                        height="8.888888888888886" radius="2" fill="var(--color-Posts)"
+                        stroke-width="3" class="recharts-rectangle"
+                        d="M 340.6071428571429,98.11111111111111
+            A 2,2,0,0,1,342.6071428571429,96.11111111111111
+            L 354.6071428571429,96.11111111111111
+            A 2,2,0,0,1,356.6071428571429,98.11111111111111
+            L 356.6071428571429,103
+            A 2,2,0,0,1,354.6071428571429,105
+            L 342.6071428571429,105
+            A 2,2,0,0,1,340.6071428571429,103 Z"></path>
+                </g>
+                <g class="recharts-layer recharts-bar-rectangle">
+                    <path x="284.17857142857144" y="93.88888888888889" width="16"
+                        height="11.111111111111114" radius="2" fill="var(--color-Posts)"
+                        stroke-width="3" class="recharts-rectangle"
+                        d="M 284.17857142857144,95.88888888888889
+            A 2,2,0,0,1,286.17857142857144,93.88888888888889
+            L 298.17857142857144,93.88888888888889
+            A 2,2,0,0,1,300.17857142857144,95.88888888888889
+            L 300.17857142857144,103
+            A 2,2,0,0,1,298.17857142857144,105
+            L 286.17857142857144,105
+            A 2,2,0,0,1,284.17857142857144,103 Z"></path>
+                </g>
+                <g class="recharts-layer recharts-bar-rectangle"></g>
+                <g class="recharts-layer recharts-bar-rectangle"></g>
+                <g class="recharts-layer recharts-bar-rectangle">
+                    <path x="114.89285714285711" y="98.33333333333333" width="16"
+                        height="6.666666666666671" radius="2" fill="var(--color-Posts)"
+                        stroke-width="3" class="recharts-rectangle"
+                        d="M 114.89285714285711,100.33333333333333
+            A 2,2,0,0,1,116.89285714285711,98.33333333333333
+            L 128.8928571428571,98.33333333333333
+            A 2,2,0,0,1,130.8928571428571,100.33333333333333
+            L 130.8928571428571,103
+            A 2,2,0,0,1,128.8928571428571,105
+            L 116.89285714285711,105
+            A 2,2,0,0,1,114.89285714285711,103 Z"></path>
+                </g>
+                <g class="recharts-layer recharts-bar-rectangle">
+                    <path x="58.46428571428572" y="93.88888888888889" width="16"
+                        height="11.111111111111114" radius="2" fill="var(--color-Posts)"
+                        stroke-width="3" class="recharts-rectangle"
+                        d="M 58.46428571428572,95.88888888888889
+            A 2,2,0,0,1,60.46428571428572,93.88888888888889
+            L 72.46428571428572,93.88888888888889
+            A 2,2,0,0,1,74.46428571428572,95.88888888888889
+            L 74.46428571428572,103
+            A 2,2,0,0,1,72.46428571428572,105
+            L 60.46428571428572,105
+            A 2,2,0,0,1,58.46428571428572,103 Z"></path>
+                </g>
+            </g>
+        </g>
+        <g class="recharts-layer"></g>
+    </g>
+    <g class="recharts-layer recharts-bar">
+        <g class="recharts-layer recharts-bar-rectangles">
+            <g class="recharts-layer">
+                <g class="recharts-layer recharts-bar-rectangle">
+                    <path x="418.6785714285714" y="71.66666666666669" width="16"
+                        height="33.333333333333314" radius="2" fill="var(--color-Replies)"
+                        stroke-width="3" class="recharts-rectangle"
+                        d="M 418.6785714285714,73.66666666666669
+            A 2,2,0,0,1,420.6785714285714,71.66666666666669
+            L 432.6785714285714,71.66666666666669
+            A 2,2,0,0,1,434.6785714285714,73.66666666666669
+            L 434.6785714285714,103
+            A 2,2,0,0,1,432.6785714285714,105
+            L 420.6785714285714,105
+            A 2,2,0,0,1,418.6785714285714,103 Z"></path>
+                </g>
+                <g class="recharts-layer recharts-bar-rectangle">
+                    <path x="362.25" y="45" width="16" height="60" radius="2"
+                        fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle"
+                        d="M 362.25,47
+            A 2,2,0,0,1,364.25,45
+            L 376.25,45
+            A 2,2,0,0,1,378.25,47
+            L 378.25,103
+            A 2,2,0,0,1,376.25,105
+            L 364.25,105
+            A 2,2,0,0,1,362.25,103 Z"></path>
+                </g>
+                <g class="recharts-layer recharts-bar-rectangle">
+                    <path x="305.82142857142856" y="16.111111111111114" width="16"
+                        height="88.88888888888889" radius="2" fill="var(--color-Replies)"
+                        stroke-width="3" class="recharts-rectangle"
+                        d="M 305.82142857142856,18.111111111111114
+            A 2,2,0,0,1,307.82142857142856,16.111111111111114
+            L 319.82142857142856,16.111111111111114
+            A 2,2,0,0,1,321.82142857142856,18.111111111111114
+            L 321.82142857142856,103
+            A 2,2,0,0,1,319.82142857142856,105
+            L 307.82142857142856,105
+            A 2,2,0,0,1,305.82142857142856,103 Z"></path>
+                </g>
+                <g class="recharts-layer recharts-bar-rectangle">
+                    <path x="249.39285714285714" y="58.333333333333336" width="16"
+                        height="46.666666666666664" radius="2" fill="var(--color-Replies)"
+                        stroke-width="3" class="recharts-rectangle"
+                        d="M 249.39285714285714,60.333333333333336
+            A 2,2,0,0,1,251.39285714285714,58.333333333333336
+            L 263.3928571428571,58.333333333333336
+            A 2,2,0,0,1,265.3928571428571,60.333333333333336
+            L 265.3928571428571,103
+            A 2,2,0,0,1,263.3928571428571,105
+            L 251.39285714285714,105
+            A 2,2,0,0,1,249.39285714285714,103 Z"></path>
+                </g>
+                <g class="recharts-layer recharts-bar-rectangle">
+                    <path x="192.96428571428572" y="65" width="16" height="40" radius="2"
+                        fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle"
+                        d="M 192.96428571428572,67
+            A 2,2,0,0,1,194.96428571428572,65
+            L 206.96428571428572,65
+            A 2,2,0,0,1,208.96428571428572,67
+            L 208.96428571428572,103
+            A 2,2,0,0,1,206.96428571428572,105
+            L 194.96428571428572,105
+            A 2,2,0,0,1,192.96428571428572,103 Z"></path>
+                </g>
+                <g class="recharts-layer recharts-bar-rectangle">
+                    <path x="136.53571428571428" y="78.33333333333333" width="16"
+                        height="26.66666666666667" radius="2" fill="var(--color-Replies)"
+                        stroke-width="3" class="recharts-rectangle"
+                        d="M 136.53571428571428,80.33333333333333
+            A 2,2,0,0,1,138.53571428571428,78.33333333333333
+            L 150.53571428571428,78.33333333333333
+            A 2,2,0,0,1,152.53571428571428,80.33333333333333
+            L 152.53571428571428,103
+            A 2,2,0,0,1,150.53571428571428,105
+            L 138.53571428571428,105
+            A 2,2,0,0,1,136.53571428571428,103 Z"></path>
+                </g>
+                <g class="recharts-layer recharts-bar-rectangle">
+                    <path x="80.10714285714289" y="27.22222222222222" width="16"
+                        height="77.77777777777777" radius="2" fill="var(--color-Replies)"
+                        stroke-width="3" class="recharts-rectangle"
+                        d="M 80.10714285714289,29.22222222222222
+            A 2,2,0,0,1,82.10714285714289,27.22222222222222
+            L 94.10714285714289,27.22222222222222
+            A 2,2,0,0,1,96.10714285714289,29.22222222222222
+            L 96.10714285714289,103
+            A 2,2,0,0,1,94.10714285714289,105
+            L 82.10714285714289,105
+            A 2,2,0,0,1,80.10714285714289,103 Z"></path>
+                </g>
+            </g>
+        </g>
+        <g class="recharts-layer"></g>
+    </g>
+    <g class="recharts-layer recharts-cartesian-axis recharts-xAxis xAxis text-subtext3">
+        <g class="recharts-cartesian-axis-ticks">
+            <g class="recharts-layer recharts-cartesian-axis-tick">
+                <text orientation="bottom" width="395" height="30" stroke="none"
+                    x="411.7857142857143" y="119"
+                    class="recharts-text recharts-cartesian-axis-tick-value" text-anchor="middle"
+                    fill="#666">
+                    <tspan x="411.7857142857143" dy="0.71em">Mar 17</tspan>
+                </text>
+            </g>
+            <g class="recharts-layer recharts-cartesian-axis-tick">
+                <text orientation="bottom" width="395" height="30" stroke="none"
+                    x="298.92857142857144" y="119"
+                    class="recharts-text recharts-cartesian-axis-tick-value" text-anchor="middle"
+                    fill="#666">
+                    <tspan x="298.92857142857144" dy="0.71em">Mar 15</tspan>
+                </text>
+            </g>
+            <g class="recharts-layer recharts-cartesian-axis-tick">
+                <text orientation="bottom" width="395" height="30" stroke="none"
+                    x="186.07142857142858" y="119"
+                    class="recharts-text recharts-cartesian-axis-tick-value" text-anchor="middle"
+                    fill="#666">
+                    <tspan x="186.07142857142858" dy="0.71em">Mar 13</tspan>
+                </text>
+            </g>
+            <g class="recharts-layer recharts-cartesian-axis-tick">
+                <text orientation="bottom" width="395" height="30" stroke="none"
+                    x="73.21428571428572" y="119"
+                    class="recharts-text recharts-cartesian-axis-tick-value" text-anchor="middle"
+                    fill="#666">
+                    <tspan x="73.21428571428572" dy="0.71em">Mar 11</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -3,12 +3,14 @@
   const STYLE_READY_CLASS = "xheatgrid-ready";
   const ANALYTICS_PATH_RE = /\/i\/account_analytics(?:\/|$)/;
   const DAY_MS = 24 * 60 * 60 * 1000;
-  const BUILD_VERSION = "v0.1.3";
+  const BUILD_VERSION = "v0.1.12";
 
   let lastSignature = "";
-  let lastUrl = location.href;
+  let lastUrl = typeof location !== "undefined" ? location.href : "";
   let refreshTimer = null;
   let observerStarted = false;
+  let chartSurfaceObserver = null;
+  let observedChartSurface = null;
 
   function scheduleRefresh(delay = 250) {
     window.clearTimeout(refreshTimer);
@@ -17,25 +19,31 @@
 
   function refresh() {
     if (!ANALYTICS_PATH_RE.test(location.pathname)) {
+      disconnectChartSurfaceObserver();
       removePanel();
       return;
     }
 
     const chart = findAnalyticsChart();
     if (!chart) {
+      disconnectChartSurfaceObserver();
       removePanel("Waiting for analytics chart...");
       return;
     }
 
+    observeChartSurface(chart);
     const rangeDays = getSelectedRangeDays();
     const series = clampSeriesToRange(extractSeries(chart), rangeDays);
     if (!series.length) {
+      console.log("[xheatgrid] parsed days: 0");
       removePanel("Unable to extract daily posts/replies yet.");
       return;
     }
 
     const signature = JSON.stringify(series);
-    if (signature === lastSignature && document.getElementById(PANEL_ID)) {
+    const panel = document.getElementById(PANEL_ID);
+    const panelIsReady = panel?.dataset.state === "ready";
+    if (signature === lastSignature && panelIsReady) {
       return;
     }
 
@@ -55,6 +63,34 @@
     }
     panel?.remove();
     lastSignature = "";
+  }
+
+  function observeChartSurface(chart) {
+    const svg = chart.querySelector("svg.recharts-surface");
+    if (!svg) {
+      disconnectChartSurfaceObserver();
+      return;
+    }
+
+    if (observedChartSurface === svg && chartSurfaceObserver) {
+      return;
+    }
+
+    disconnectChartSurfaceObserver();
+    observedChartSurface = svg;
+    chartSurfaceObserver = new MutationObserver(() => scheduleRefresh(50));
+    chartSurfaceObserver.observe(svg, {
+      childList: true,
+      subtree: true,
+      attributes: true,
+      characterData: true
+    });
+  }
+
+  function disconnectChartSurfaceObserver() {
+    chartSurfaceObserver?.disconnect();
+    chartSurfaceObserver = null;
+    observedChartSurface = null;
   }
 
   function findAnalyticsChart() {
@@ -126,6 +162,30 @@
     return datedColumns.filter((entry) => entry.date instanceof Date && !Number.isNaN(entry.date.valueOf()));
   }
 
+  function extractSeriesFromSvgMarkup(svgMarkup, referenceDate = new Date()) {
+    if (typeof svgMarkup !== "string" || !svgMarkup.trim()) {
+      return [];
+    }
+
+    const plotArea = parsePlotAreaFromSvgMarkup(svgMarkup);
+    const maxValue = parseMaxYAxisValueFromSvgMarkup(svgMarkup);
+    if (!plotArea || !Number.isFinite(maxValue) || maxValue <= 0) {
+      return [];
+    }
+
+    const slotGroups = parseBarSlotGroupsFromSvgMarkup(svgMarkup, plotArea, maxValue);
+    const columns = extractColumnsFromSlotGroups(slotGroups, plotArea)
+      || extractColumnsFromBarData(parseBarsFromSvgMarkup(svgMarkup), plotArea, maxValue);
+    if (!columns.length) {
+      return [];
+    }
+
+    const tickLabels = parseDateTicksFromSvgMarkup(svgMarkup);
+    const ticks = extractDateTicksFromData(tickLabels, columns, referenceDate);
+    const datedColumns = assignDates(columns, ticks);
+    return datedColumns.filter((entry) => entry.date instanceof Date && !Number.isNaN(entry.date.valueOf()));
+  }
+
   function getPlotArea(svg) {
     const clipRect = svg.querySelector("clipPath rect");
     if (!clipRect) {
@@ -175,74 +235,89 @@
 
     const postsSlots = slotsBySeries.get("posts") || [];
     const repliesSlots = slotsBySeries.get("replies") || [];
-    const slotCount = Math.max(postsSlots.length, repliesSlots.length);
-    if (!slotCount) {
+    const columnsFromSlots = buildColumnsFromSeriesSlots(
+      postsSlots,
+      repliesSlots,
+      estimateSlotCount(svg, postsSlots, repliesSlots),
+      plotArea
+    );
+    if (columnsFromSlots.length) {
+      return columnsFromSlots;
+    }
+
+    if (!postsSlots.length && !repliesSlots.length) {
       return extractColumnsFromBars(svg, plotArea, maxValue);
     }
 
-    const columns = [];
-    const centersByIndex = inferSlotCenters(postsSlots, repliesSlots, plotArea);
-    for (let index = 0; index < slotCount; index += 1) {
-      const posts = postsSlots[index] || null;
-      const replies = repliesSlots[index] || null;
-      const center = centersByIndex[index];
-      if (!Number.isFinite(center)) {
-        continue;
-      }
-
-      columns.push({
-        center,
-        posts: posts?.value || 0,
-        replies: replies?.value || 0
-      });
-    }
-
-    return columns;
+    return extractColumnsFromBars(svg, plotArea, maxValue);
   }
 
   function extractColumnsFromBars(svg, plotArea, maxValue) {
     const rectangles = Array.from(svg.querySelectorAll(".recharts-bar-rectangle path.recharts-rectangle"));
-    const bars = [];
+    const bars = rectangles
+      .map((node) => {
+        const x = Number(node.getAttribute("x"));
+        const width = Number(node.getAttribute("width"));
+        const height = Number(node.getAttribute("height"));
+        const fill = node.getAttribute("fill") || "";
 
-    for (const node of rectangles) {
-      const x = Number(node.getAttribute("x"));
-      const width = Number(node.getAttribute("width"));
-      const height = Number(node.getAttribute("height"));
-      const fill = node.getAttribute("fill") || "";
+        if ([x, width, height].some((value) => !Number.isFinite(value))) {
+          return null;
+        }
 
-      if ([x, width, height].some((value) => !Number.isFinite(value))) {
-        continue;
-      }
+        let series = "";
+        if (/Posts/i.test(fill)) {
+          series = "posts";
+        } else if (/Replies/i.test(fill)) {
+          series = "replies";
+        } else {
+          series = inferSeriesByColor(node, svg);
+        }
 
-      let series = "";
-      if (/Posts/i.test(fill)) {
-        series = "posts";
-      } else if (/Replies/i.test(fill)) {
-        series = "replies";
-      } else {
-        series = inferSeriesByColor(node, svg);
-      }
+        return {
+          x,
+          width,
+          height,
+          fill,
+          series
+        };
+      })
+      .filter(Boolean);
 
-      bars.push({
-        x,
-        width,
-        center: x + width / 2,
-        series,
-        value: Math.max(0, Math.round((height / plotArea.height) * maxValue))
-      });
-    }
+    return extractColumnsFromBarData(bars, plotArea, maxValue);
+  }
 
-    bars.sort((a, b) => a.x - b.x);
-    if (!bars.length) {
+  function extractColumnsFromBarData(bars, plotArea, maxValue) {
+    const normalizedBars = bars
+      .map((bar) => {
+        const x = Number(bar.x);
+        const width = Number(bar.width);
+        const height = Number(bar.height);
+        if ([x, width, height].some((value) => !Number.isFinite(value))) {
+          return null;
+        }
+
+        return {
+          x,
+          width,
+          center: x + width / 2,
+          series: bar.series || "posts",
+          value: Math.max(0, Math.round((height / plotArea.height) * maxValue))
+        };
+      })
+      .filter(Boolean)
+      .sort((a, b) => a.x - b.x);
+
+    if (!normalizedBars.length) {
       return [];
     }
 
-    const typicalWidth = median(bars.map((bar) => bar.width));
+    const typicalWidth = median(normalizedBars.map((bar) => bar.width));
     const sameDayGap = typicalWidth * 1.25;
     const columns = [];
     let current = null;
 
-    for (const bar of bars) {
+    for (const bar of normalizedBars) {
       if (!current || bar.x - current.lastRight > sameDayGap) {
         current = {
           center: bar.center,
@@ -262,6 +337,51 @@
     }
 
     return columns.map(({ lastRight, points, ...column }) => column);
+  }
+
+  function buildColumnsFromSeriesSlots(postsSlots, repliesSlots, slotCount, plotArea) {
+    if (!slotCount) {
+      return [];
+    }
+
+    const columns = [];
+    const centersByIndex = inferSlotCenters(postsSlots, repliesSlots, plotArea);
+    for (let index = 0; index < slotCount; index += 1) {
+      const posts = postsSlots[index] || null;
+      const replies = repliesSlots[index] || null;
+      const center = centersByIndex[index];
+      if (!Number.isFinite(center)) {
+        continue;
+      }
+
+      columns.push({
+        center,
+        posts: posts?.value || 0,
+        replies: replies?.value || 0
+      });
+    }
+
+    return columns.sort((a, b) => a.center - b.center);
+  }
+
+  function extractColumnsFromSlotGroups(slotGroups, plotArea) {
+    if (!slotGroups.length) {
+      return null;
+    }
+
+    const slotsBySeries = new Map();
+    slotGroups.forEach((slots) => {
+      const sample = slots.find(Boolean);
+      if (!sample?.series || slotsBySeries.has(sample.series)) {
+        return;
+      }
+      slotsBySeries.set(sample.series, slots);
+    });
+
+    const postsSlots = slotsBySeries.get("posts") || [];
+    const repliesSlots = slotsBySeries.get("replies") || [];
+    const slotCount = Math.max(postsSlots.length, repliesSlots.length);
+    return buildColumnsFromSeriesSlots(postsSlots, repliesSlots, slotCount, plotArea);
   }
 
   function detectBarSeries(group, svg, slotsBySeries, groupIndex, groupCount) {
@@ -373,6 +493,35 @@
     return centers;
   }
 
+  function estimateSlotCount(svg, postsSlots, repliesSlots) {
+    const explicitCount = Math.max(postsSlots.length, repliesSlots.length);
+    if (explicitCount) {
+      return explicitCount;
+    }
+
+    const ticks = Array.from(svg.querySelectorAll(".recharts-xAxis .recharts-cartesian-axis-tick text"))
+      .map((node) => Number(node.getAttribute("x")))
+      .filter((value) => Number.isFinite(value));
+
+    if (ticks.length >= 2) {
+      const distances = [];
+      for (let index = 1; index < ticks.length; index += 1) {
+        const distance = ticks[index] - ticks[index - 1];
+        if (distance > 0) {
+          distances.push(distance);
+        }
+      }
+
+      const step = median(distances);
+      if (Number.isFinite(step) && step > 0) {
+        const span = ticks[ticks.length - 1] - ticks[0];
+        return Math.round(span / step) + 1;
+      }
+    }
+
+    return 0;
+  }
+
   function inferSeriesByColor(node, svg) {
     const fills = new Map();
     const styleText = svg.parentElement?.querySelector("style")?.textContent || "";
@@ -405,18 +554,136 @@
       })
       .filter(Boolean);
 
-    const datedLabels = assignYearsToTicks(parsedLabels);
+    return extractDateTicksFromData(parsedLabels, columns);
+  }
+
+  function extractDateTicksFromData(labels, columns, referenceDate = new Date()) {
+    const datedLabels = assignYearsToTicks([...labels].sort((a, b) => a.x - b.x), referenceDate);
     const tickData = [];
+    let minColumnIndex = 0;
 
     for (const label of datedLabels) {
-      const nearestIndex = findNearestColumnIndex(columns, label.x);
+      const nearestIndex = findNearestColumnIndex(columns, label.x, minColumnIndex);
       tickData.push({
         columnIndex: nearestIndex,
         date: label.date
       });
+      minColumnIndex = Math.min(columns.length - 1, nearestIndex + 1);
     }
 
     return tickData.sort((a, b) => a.columnIndex - b.columnIndex);
+  }
+
+  function parsePlotAreaFromSvgMarkup(svgMarkup) {
+    const rectMatch = svgMarkup.match(/<clipPath\b[^>]*>[\s\S]*?<rect\b[^>]*\bx="([^"]+)"[^>]*\by="([^"]+)"[^>]*\b(?:height="([^"]+)"[^>]*\bwidth="([^"]+)"|\bwidth="([^"]+)"[^>]*\bheight="([^"]+)")[^>]*>/i);
+    if (!rectMatch) {
+      return null;
+    }
+
+    const x = Number(rectMatch[1]);
+    const y = Number(rectMatch[2]);
+    const width = Number(rectMatch[4] || rectMatch[5]);
+    const height = Number(rectMatch[3] || rectMatch[6]);
+    if ([x, y, width, height].some((value) => !Number.isFinite(value))) {
+      return null;
+    }
+
+    return {
+      left: x,
+      top: y,
+      width,
+      height,
+      bottom: y + height
+    };
+  }
+
+  function parseMaxYAxisValueFromSvgMarkup(svgMarkup) {
+    const values = Array.from(svgMarkup.matchAll(/<tspan\b[^>]*>([^<]+)<\/tspan>/gi))
+      .map((match) => Number.parseFloat(match[1].replace(/,/g, "")))
+      .filter((value) => Number.isFinite(value));
+
+    return values.length ? Math.max(...values) : NaN;
+  }
+
+  function parseBarsFromSvgMarkup(svgMarkup) {
+    return Array.from(svgMarkup.matchAll(/<path\b[^>]*\bx="([^"]+)"[^>]*\bwidth="([^"]+)"[^>]*\bheight="([^"]+)"[^>]*\bfill="([^"]+)"[^>]*class="recharts-rectangle"[^>]*>/gi))
+      .map((match) => {
+        const fill = match[4] || "";
+        let series = "";
+        if (/Posts/i.test(fill)) {
+          series = "posts";
+        } else if (/Replies/i.test(fill)) {
+          series = "replies";
+        } else {
+          return null;
+        }
+
+        return {
+          x: Number(match[1]),
+          width: Number(match[2]),
+          height: Number(match[3]),
+          fill,
+          series
+        };
+      })
+      .filter(Boolean);
+  }
+
+  function parseBarSlotGroupsFromSvgMarkup(svgMarkup, plotArea, maxValue) {
+    return svgMarkup
+      .split('<g class="recharts-layer recharts-bar">')
+      .slice(1)
+      .map((groupMarkup) => Array.from(groupMarkup.matchAll(/<g class="recharts-layer recharts-bar-rectangle">([\s\S]*?)<\/g>/gi))
+        .map((match) => {
+          const pathMatch = match[1].match(/<path\b[^>]*\bx="([^"]+)"[^>]*\bwidth="([^"]+)"[^>]*\bheight="([^"]+)"[^>]*\bfill="([^"]+)"[^>]*class="recharts-rectangle"[^>]*>/i);
+          if (!pathMatch) {
+            return null;
+          }
+
+          const fill = pathMatch[4] || "";
+          let series = "";
+          if (/Posts/i.test(fill)) {
+            series = "posts";
+          } else if (/Replies/i.test(fill)) {
+            series = "replies";
+          } else {
+            return null;
+          }
+
+          const x = Number(pathMatch[1]);
+          const width = Number(pathMatch[2]);
+          const height = Number(pathMatch[3]);
+          if ([x, width, height].some((value) => !Number.isFinite(value))) {
+            return null;
+          }
+
+          return {
+            center: x + width / 2,
+            value: Math.max(0, Math.round((height / plotArea.height) * maxValue)),
+            series
+          };
+        }))
+      .filter((slots) => slots.length);
+  }
+
+  function parseDateTicksFromSvgMarkup(svgMarkup) {
+    return Array.from(svgMarkup.matchAll(/<text\b[^>]*\bx="([^"]+)"[^>]*>\s*<tspan\b[^>]*>([^<]+)<\/tspan>\s*<\/text>/gi))
+      .map((match) => {
+        const x = Number(match[1]);
+        const text = (match[2] || "").trim();
+        const parts = parseTickParts(text);
+        if (!Number.isFinite(x) || !parts) {
+          return null;
+        }
+
+        return {
+          label: text,
+          x,
+          monthIndex: parts.monthIndex,
+          day: parts.day
+        };
+      })
+      .filter(Boolean);
   }
 
   function parseTickParts(label) {
@@ -438,7 +705,7 @@
     return { monthIndex, day };
   }
 
-  function assignYearsToTicks(labels) {
+  function assignYearsToTicks(labels, referenceDate = new Date()) {
     if (!labels.length) {
       return [];
     }
@@ -455,7 +722,7 @@
       }
     }
 
-    let year = new Date().getFullYear() - wraps;
+    let year = referenceDate.getFullYear() - wraps;
     return labels.map((label, index) => {
       if (index > 0) {
         const previous = labels[index - 1];
@@ -474,10 +741,13 @@
     });
   }
 
-  function findNearestColumnIndex(columns, x) {
-    let bestIndex = 0;
+  function findNearestColumnIndex(columns, x, minIndex = 0) {
+    let bestIndex = Math.max(0, Math.min(columns.length - 1, minIndex));
     let bestDistance = Infinity;
     columns.forEach((column, index) => {
+      if (index < minIndex) {
+        return;
+      }
       const distance = Math.abs(column.center - x);
       if (distance < bestDistance) {
         bestDistance = distance;
@@ -556,13 +826,16 @@
       panel = document.createElement("section");
       panel.id = PANEL_ID;
       panel.className = STYLE_READY_CLASS;
-      host.prepend(panel);
+      panel.setAttribute("role", "dialog");
+      panel.setAttribute("aria-label", "X Activity Heatmap");
+      host.append(panel);
     }
 
     const maxTotal = Math.max(...series.map((entry) => entry.total), 1);
     const weeks = buildWeeks(series);
     const activeDays = series.length;
     const coveredDays = countCoveredDays(weeks);
+    console.log("[xheatgrid] parsed days:", activeDays);
     panel.dataset.state = "ready";
     panel.innerHTML = `
       <div class="xheatgrid-card">
@@ -604,7 +877,7 @@
   }
 
   function findInsertionPoint() {
-    return document.querySelector("main") || document.body;
+    return document.body || document.documentElement;
   }
 
   function buildWeeks(series) {
@@ -653,12 +926,13 @@
 
   function renderCell(day, maxTotal) {
     const level = day.hasData ? Math.max(0.08, day.total / maxTotal) : 0;
-    const title = `${formatDate(day.date)}\nPosts: ${day.posts}\nReplies: ${day.replies}\nTotal: ${day.total}`;
+    const title = `${formatDate(day.date)}\nPosts: ${day.posts}\nReplies: ${day.replies}`;
     return `
       <button
         class="xheatgrid-cell${day.hasData ? "" : " is-empty"}"
         type="button"
         style="--level:${level}"
+        data-tooltip="${escapeHtml(title)}"
         title="${escapeHtml(title)}"
         aria-label="${escapeHtml(title)}"
       ></button>
@@ -751,15 +1025,22 @@
     }
     observerStarted = true;
 
-    const mutationObserver = new MutationObserver(() => {
+    const pageObserver = new MutationObserver(() => {
       if (location.href !== lastUrl) {
         lastUrl = location.href;
         lastSignature = "";
+        disconnectChartSurfaceObserver();
+        scheduleRefresh(50);
+        return;
       }
-      scheduleRefresh(200);
+
+      if (!observedChartSurface || !document.documentElement.contains(observedChartSurface)) {
+        disconnectChartSurfaceObserver();
+        scheduleRefresh(100);
+      }
     });
 
-    mutationObserver.observe(document.documentElement, {
+    pageObserver.observe(document.documentElement, {
       childList: true,
       subtree: true
     });
@@ -775,6 +1056,14 @@
     window.addEventListener("load", () => scheduleRefresh(50));
   }
 
-  installObservers();
-  scheduleRefresh(50);
+  if (typeof module !== "undefined" && module.exports) {
+    module.exports = {
+      extractSeriesFromSvgMarkup
+    };
+  }
+
+  if (typeof window !== "undefined" && typeof document !== "undefined" && typeof location !== "undefined") {
+    installObservers();
+    scheduleRefresh(50);
+  }
 })();
