@@ -1,25 +1,26 @@
 {
   "manifest_version": 3,
   "name": "X Analytics Heatmap",
-  "version": "0.1.0",
+  "version": "0.2.0",
+  "minimum_chrome_version": "111",
   "description": "Reads X account analytics and renders a GitHub-style heatmap for daily posts and replies.",
-  "permissions": [],
-  "host_permissions": [
-    "https://x.com/*",
-    "https://twitter.com/*"
-  ],
   "content_scripts": [
     {
-      "matches": [
-        "https://x.com/*",
-        "https://twitter.com/*"
-      ],
+      "matches": ["https://x.com/*", "https://twitter.com/*"],
+      "js": ["bridge-main.js"],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
+    {
+      "matches": ["https://x.com/*", "https://twitter.com/*"],
       "js": [
+        "lib/core.js",
+        "lib/chart-parser.js",
+        "lib/render.js",
+        "lib/controller.js",
         "content.js"
       ],
-      "css": [
-        "heatmap.css"
-      ],
+      "css": ["heatmap.css"],
       "run_at": "document_idle"
     }
   ]
