@@ -1,4 +1,6 @@
 #xheatgrid-panel {
+  --xh-cell: 12px;
+  --xh-gap: 4px;
   bottom: 14px;
   margin: 0;
   position: fixed;
@@ -7,11 +9,21 @@
   z-index: 2147483647;
 }
 
+#xheatgrid-panel[data-minimized="true"] {
+  width: auto;
+}
+
+#xheatgrid-panel[data-minimized="true"] .xheatgrid-body,
+#xheatgrid-panel[data-minimized="true"] .xheatgrid-title p {
+  display: none;
+}
+
 .xheatgrid-card {
   background: linear-gradient(180deg, #10161f 0%, #0b1018 100%);
   border: 1px solid rgba(111, 118, 130, 0.28);
   border-radius: 20px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.22);
+  box-sizing: border-box;
   color: #eef2f7;
   font-family: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas, monospace;
   max-height: min(78vh, 540px);
@@ -20,11 +32,15 @@
 }
 
 .xheatgrid-header {
-  align-items: center;
+  align-items: flex-start;
   display: flex;
-  gap: 16px;
+  gap: 12px;
   justify-content: space-between;
   margin-bottom: 12px;
+}
+
+#xheatgrid-panel[data-minimized="true"] .xheatgrid-header {
+  margin-bottom: 0;
 }
 
 .xheatgrid-header h2 {
@@ -41,10 +57,65 @@
   margin-left: 6px;
 }
 
+.xheatgrid-badge {
+  background: rgba(240, 180, 41, 0.16);
+  border: 1px solid rgba(240, 180, 41, 0.5);
+  border-radius: 999px;
+  color: #f0b429;
+  font-size: 10px;
+  font-weight: 600;
+  margin-left: 8px;
+  padding: 1px 7px;
+}
+
+.xheatgrid-badge[hidden],
+.xheatgrid-content[hidden],
+.xheatgrid-message[hidden],
+.xheatgrid-notes[hidden],
+.xheatgrid-tooltip[hidden] {
+  display: none;
+}
+
 .xheatgrid-header p {
   color: #95a0b0;
   font-size: 12px;
   margin: 4px 0 0;
+}
+
+.xheatgrid-actions {
+  display: flex;
+  flex: none;
+  gap: 6px;
+}
+
+.xheatgrid-icon-button {
+  appearance: none;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #eef2f7;
+  cursor: pointer;
+  font: inherit;
+  font-size: 14px;
+  height: 26px;
+  line-height: 1;
+  padding: 0;
+  width: 26px;
+}
+
+.xheatgrid-icon-button:hover,
+.xheatgrid-icon-button:focus-visible {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.xheatgrid-message {
+  color: #95a0b0;
+  font-size: 12px;
+  padding: 8px 0 4px;
+}
+
+#xheatgrid-panel[data-state="error"] .xheatgrid-message {
+  color: #ff8a80;
 }
 
 .xheatgrid-legend {
@@ -53,15 +124,44 @@
   display: flex;
   font-size: 11px;
   gap: 6px;
+  justify-content: flex-end;
+  margin-bottom: 10px;
   white-space: nowrap;
 }
 
-.xheatgrid-legend i,
-.xheatgrid-cell {
-  --cell-color: color-mix(in srgb, #39d353 calc(var(--level) * 100%), #161b22);
+.xheatgrid-notes p {
+  color: #f0b429;
+  font-size: 11px;
+  margin: 0 0 8px;
 }
 
-.xheatgrid-legend i {
+/* Discrete GitHub-style levels; "none" = no data for that day (outline only). */
+.xheatgrid-swatch,
+.xheatgrid-cell {
+  --cell-color: #161b22;
+}
+
+.xheatgrid-swatch[data-level="1"],
+.xheatgrid-cell[data-level="1"] {
+  --cell-color: #0e4429;
+}
+
+.xheatgrid-swatch[data-level="2"],
+.xheatgrid-cell[data-level="2"] {
+  --cell-color: #006d32;
+}
+
+.xheatgrid-swatch[data-level="3"],
+.xheatgrid-cell[data-level="3"] {
+  --cell-color: #26a641;
+}
+
+.xheatgrid-swatch[data-level="4"],
+.xheatgrid-cell[data-level="4"] {
+  --cell-color: #39d353;
+}
+
+.xheatgrid-swatch {
   background: var(--cell-color);
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 3px;
@@ -99,36 +199,42 @@
 .xheatgrid-scroll {
   max-height: min(44vh, 300px);
   overflow-x: auto;
-  overflow-y: visible;
+  overflow-y: hidden;
   padding-bottom: 4px;
 }
 
 .xheatgrid-months {
   display: grid;
-  gap: 4px;
-  grid-auto-columns: 12px;
+  gap: var(--xh-gap);
+  grid-auto-columns: var(--xh-cell);
   grid-auto-flow: column;
-  margin-left: 26px;
   margin-bottom: 6px;
+  margin-left: 34px;
+  width: max-content;
 }
 
 .xheatgrid-months span {
   color: #95a0b0;
   font-size: 10px;
   min-height: 12px;
+  white-space: nowrap;
 }
 
 .xheatgrid-grid-wrap {
   display: flex;
   gap: 8px;
+  width: max-content;
 }
 
+/* Sunday-start weeks: row 1 Sun, 2 Mon, 3 Tue, 4 Wed, 5 Thu, 6 Fri, 7 Sat. */
 .xheatgrid-days {
   color: #95a0b0;
   display: grid;
   font-size: 10px;
-  grid-template-rows: repeat(7, 12px);
-  line-height: 12px;
+  grid-template-rows: repeat(7, var(--xh-cell));
+  gap: var(--xh-gap);
+  line-height: var(--xh-cell);
+  width: 26px;
 }
 
 .xheatgrid-days span:nth-child(1) {
@@ -145,13 +251,13 @@
 
 .xheatgrid-grid {
   display: flex;
-  gap: 4px;
+  gap: var(--xh-gap);
 }
 
 .xheatgrid-week {
   display: grid;
-  gap: 4px;
-  grid-template-rows: repeat(7, 12px);
+  gap: var(--xh-gap);
+  grid-template-rows: repeat(7, var(--xh-cell));
 }
 
 .xheatgrid-cell {
@@ -159,51 +265,41 @@
   background: var(--cell-color);
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 3px;
+  box-sizing: border-box;
   cursor: default;
-  height: 12px;
+  height: var(--xh-cell);
   margin: 0;
   padding: 0;
-  position: relative;
-  width: 12px;
+  width: var(--xh-cell);
 }
 
-.xheatgrid-cell.is-empty {
-  --cell-color: #161b22;
+.xheatgrid-cell[data-level="none"] {
+  background: transparent;
+  border: 1px dashed rgba(255, 255, 255, 0.14);
 }
 
-.xheatgrid-cell:hover::after,
-.xheatgrid-cell:focus-visible::after {
+.xheatgrid-cell:focus-visible {
+  outline: 2px solid #58a6ff;
+  outline-offset: 1px;
+}
+
+/* One tooltip for the whole panel: fixed, so neither the scroller nor the card can clip it. */
+.xheatgrid-tooltip {
   background: #0b1018;
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 8px;
-  bottom: calc(100% + 7px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
   color: #eef2f7;
-  content: attr(data-tooltip);
+  font-family: ui-monospace, "SFMono-Regular", "SF Mono", Menlo, Consolas, monospace;
   font-size: 10px;
-  left: 50%;
+  left: 0;
   line-height: 1.35;
-  min-width: max-content;
   padding: 6px 8px;
   pointer-events: none;
-  position: absolute;
-  transform: translateX(-50%);
+  position: fixed;
+  top: 0;
   white-space: pre;
-  z-index: 30;
-}
-
-.xheatgrid-cell:hover::before,
-.xheatgrid-cell:focus-visible::before {
-  border-left: 5px solid transparent;
-  border-right: 5px solid transparent;
-  border-top: 6px solid rgba(255, 255, 255, 0.18);
-  bottom: calc(100% + 1px);
-  content: "";
-  left: 50%;
-  pointer-events: none;
-  position: absolute;
-  transform: translateX(-50%);
-  z-index: 31;
+  z-index: 2147483647;
 }
 
 @media (max-width: 768px) {
@@ -213,18 +309,26 @@
     width: calc(100vw - 16px);
   }
 
+  #xheatgrid-panel[data-minimized="true"] {
+    width: auto;
+  }
+
   .xheatgrid-card {
     border-radius: 16px;
-    max-height: 76vh;
+    max-height: 50vh;
+    overflow-y: auto;
     padding: 12px;
   }
 
-  .xheatgrid-header,
   .xheatgrid-summary {
     gap: 8px;
   }
 
-  .xheatgrid-summary {
-    grid-template-columns: 1fr;
+  .xheatgrid-summary div {
+    padding: 8px;
+  }
+
+  .xheatgrid-summary strong {
+    font-size: 16px;
   }
 }
