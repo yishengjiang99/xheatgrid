@@ -1,0 +1,1204 @@
+<!-- Trimmed fixture: X account_analytics, 3M range selected (captured 2026-03-17). Only the range buttons and the Posts/Replies chart card are kept; the rest of the logged-in page (account metadata) was removed. -->
+<div id="range-buttons"><div class="flex items-center justify-start gap-2"><button class="gap-1 inline-flex items-center border border-solid has-[svg:only-child]:px-0 transition disabled:pointer-events-none focus-visible:outline disabled:opacity-50 justify-center h-6 min-w-6 px-1 [&amp;&gt;svg]:size-4 text-body bg-transparent border-nested-border border-solid outline-text text-text rounded-full active:bg-mix-text active:bg-mix-amount-15 focus-visible:bg-mix-text focus-visible:bg-mix-amount-10 hover:bg-mix-text hover:bg-mix-amount-10 h-8 shrink-0 px-1" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-:r0:" data-state="closed"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" data-icon="icon-calendar" viewBox="0 0 24 24" width="1em" height="1em" display="flex" role="img" class="mx-px size-5"><path d="M7 4V3h2v1h6V3h2v1h1.5C19.89 4 21 5.12 21 6.5v12c0 1.38-1.11 2.5-2.5 2.5h-13C4.12 21 3 19.88 3 18.5v-12C3 5.12 4.12 4 5.5 4H7zm0 2H5.5c-.27 0-.5.22-.5.5v12c0 .28.23.5.5.5h13c.28 0 .5-.22.5-.5v-12c0-.28-.22-.5-.5-.5H17v1h-2V6H9v1H7V6zm0 6h2v-2H7v2zm0 4h2v-2H7v2zm4-4h2v-2h-2v2zm0 4h2v-2h-2v2zm4-4h2v-2h-2v2z"></path></svg></button><button class="gap-1 inline-flex items-center border border-solid has-[svg:only-child]:px-0 transition disabled:pointer-events-none focus-visible:outline disabled:opacity-50 justify-center h-8 min-w-8 px-4 [&amp;&gt;svg]:size-[1.125rem] text-subtext1 bg-transparent border-nested-border border-solid outline-text text-text rounded-full active:bg-mix-text active:bg-mix-amount-15 focus-visible:bg-mix-text focus-visible:bg-mix-amount-10 hover:bg-mix-text hover:bg-mix-amount-10 shrink-0"><div class="font-chirp max-w-full whitespace-pre-wrap break-words text-inherit line-clamp-1 text-[length:inherit] font-bold">7D</div></button><button class="gap-1 inline-flex items-center border border-solid has-[svg:only-child]:px-0 transition disabled:pointer-events-none focus-visible:outline disabled:opacity-50 justify-center h-8 min-w-8 px-4 [&amp;&gt;svg]:size-[1.125rem] text-subtext1 bg-transparent border-nested-border border-solid outline-text text-text rounded-full active:bg-mix-text active:bg-mix-amount-15 focus-visible:bg-mix-text focus-visible:bg-mix-amount-10 hover:bg-mix-text hover:bg-mix-amount-10 shrink-0"><div class="font-chirp max-w-full whitespace-pre-wrap break-words text-inherit line-clamp-1 text-[length:inherit] font-bold">2W</div></button><button class="gap-1 inline-flex items-center border border-solid has-[svg:only-child]:px-0 transition disabled:pointer-events-none focus-visible:outline disabled:opacity-50 justify-center h-8 min-w-8 px-4 [&amp;&gt;svg]:size-[1.125rem] text-subtext1 bg-transparent border-nested-border border-solid outline-text text-text rounded-full active:bg-mix-text active:bg-mix-amount-15 focus-visible:bg-mix-text focus-visible:bg-mix-amount-10 hover:bg-mix-text hover:bg-mix-amount-10 shrink-0"><div class="font-chirp max-w-full whitespace-pre-wrap break-words text-inherit line-clamp-1 text-[length:inherit] font-bold">4W</div></button><button class="gap-1 inline-flex items-center border border-solid has-[svg:only-child]:px-0 transition disabled:pointer-events-none focus-visible:outline disabled:opacity-50 justify-center h-8 min-w-8 px-4 [&amp;&gt;svg]:size-[1.125rem] text-subtext1 bg-text border-transparent outline-text text-background rounded-full active:bg-mix-background active:bg-mix-amount-15 focus-visible:bg-mix-background focus-visible:bg-mix-amount-10 hover:bg-mix-background hover:bg-mix-amount-10 shrink-0"><div class="font-chirp max-w-full whitespace-pre-wrap break-words text-inherit line-clamp-1 text-[length:inherit] font-bold">3M</div></button><button class="gap-1 inline-flex items-center border border-solid has-[svg:only-child]:px-0 transition disabled:pointer-events-none focus-visible:outline disabled:opacity-50 justify-center h-8 min-w-8 px-4 [&amp;&gt;svg]:size-[1.125rem] text-subtext1 bg-transparent border-nested-border border-solid outline-text text-text rounded-full active:bg-mix-text active:bg-mix-amount-15 focus-visible:bg-mix-text focus-visible:bg-mix-amount-10 hover:bg-mix-text hover:bg-mix-amount-10 shrink-0"><div class="font-chirp max-w-full whitespace-pre-wrap break-words text-inherit line-clamp-1 text-[length:inherit] font-bold">1Y</div></button></div></div>
+<div class="bg-gray-0 rounded-2xl relative flex h-[170px] w-full flex-col gap-4 md:h-[200px] border border-gray-200"><div class="flex items-start justify-between px-4 pt-4"><div class="text-subtext1 flex select-none items-center gap-4 font-medium text-gray-900"><button class="flex cursor-pointer items-center gap-1 rounded-md border p-1 md:hover:bg-gray-100" aria-label="Posts" type="button"><div class="h-4 w-1 shrink-0 rounded-sm bg-blue-500"></div>Posts</button><button aria-label="Replies" class="flex cursor-pointer items-center gap-1 rounded-md border p-1 md:hover:bg-gray-100" type="button"><div class="h-4 w-1 shrink-0 rounded-sm bg-green-500"></div>Replies</button></div><button type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-:ra:" data-state="closed"><button class="text-gray-700" type="button"><svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" data-icon="icon-information-circle" viewBox="0 0 24 24" width="1em" height="1em" display="flex" role="img"><path d="M13.5 8.5c0 .83-.67 1.5-1.5 1.5s-1.5-.67-1.5-1.5S11.17 7 12 7s1.5.67 1.5 1.5zM13 17v-5h-2v5h2zm-1 5.25c5.66 0 10.25-4.59 10.25-10.25S17.66 1.75 12 1.75 1.75 6.34 1.75 12 6.34 22.25 12 22.25zM20.25 12c0 4.56-3.69 8.25-8.25 8.25S3.75 16.56 3.75 12 7.44 3.75 12 3.75s8.25 3.69 8.25 8.25z"></path></svg></button></button></div><div data-chart="chart-rd" class="[&amp;_.recharts-curve.recharts-tooltip-cursor]:stroke-border [&amp;_.recharts-polar-grid_[stroke='#ccc']]:stroke-border [&amp;_.recharts-radial-bar-background-sector]:fill-muted [&amp;_.recharts-reference-line_[stroke='#ccc']]:stroke-border flex justify-center text-xs [&amp;_.recharts-cartesian-grid_line[stroke='#ccc']]:stroke-gray-100 [&amp;_.recharts-dot[stroke='#fff']]:stroke-transparent [&amp;_.recharts-layer]:outline-none [&amp;_.recharts-rectangle.recharts-tooltip-cursor]:fill-gray-100 [&amp;_.recharts-sector[stroke='#fff']]:stroke-transparent [&amp;_.recharts-sector]:outline-none [&amp;_.recharts-surface]:outline-none relative aspect-auto h-full min-h-[0] w-full select-none pe-2"><style>
+.dark [data-chart=chart-rd] {
+  --color-Posts: hsl(var(--color-blue-500));
+  --color-Replies: hsl(var(--color-green-500));
+}
+
+
+ [data-chart=chart-rd] {
+  --color-Posts: hsl(var(--color-blue-500));
+  --color-Replies: hsl(var(--color-green-500));
+}
+</style><div class="recharts-responsive-container" style="width: 100%; height: 100%; min-width: 0px;"><div class="recharts-wrapper" style="position: relative; cursor: default; width: 100%; height: 100%; max-height: 139px; max-width: 454px;"><svg class="recharts-surface" width="454" height="139" viewBox="0 0 454 139" style="width: 100%; height: 100%;"><title></title><desc></desc><defs><clipPath id="recharts7-clip"><rect x="50" y="5" height="99" width="394"></rect></clipPath></defs><g class="recharts-layer recharts-cartesian-axis recharts-yAxis yAxis text-subtext3"><g class="recharts-cartesian-axis-ticks"><g class="recharts-layer recharts-cartesian-axis-tick"><text orientation="left" width="60" height="99" stroke="none" x="42" y="104" class="recharts-text recharts-cartesian-axis-tick-value" text-anchor="end" fill="hsl(var(--color-gray-600))"><tspan x="42" dy="0.355em">0</tspan></text></g><g class="recharts-layer recharts-cartesian-axis-tick"><text orientation="left" width="60" height="99" stroke="none" x="42" y="71.00000000000001" class="recharts-text recharts-cartesian-axis-tick-value" text-anchor="end" fill="hsl(var(--color-gray-600))"><tspan x="42" dy="0.355em">40</tspan></text></g><g class="recharts-layer recharts-cartesian-axis-tick"><text orientation="left" width="60" height="99" stroke="none" x="42" y="38.00000000000001" class="recharts-text recharts-cartesian-axis-tick-value" text-anchor="end" fill="hsl(var(--color-gray-600))"><tspan x="42" dy="0.355em">80</tspan></text></g><g class="recharts-layer recharts-cartesian-axis-tick"><text orientation="left" width="60" height="99" stroke="none" x="42" y="8.2421875" class="recharts-text recharts-cartesian-axis-tick-value" text-anchor="end" fill="hsl(var(--color-gray-600))"><tspan x="42" dy="0.355em">120</tspan></text></g></g></g><g class="recharts-cartesian-grid"><g class="recharts-cartesian-grid-horizontal"><line stroke-opacity="1" stroke="hsl(var(--color-gray-100))" fill="none" x="50" y="5" width="394" height="99" x1="50" y1="104" x2="444" y2="104"></line><line stroke-opacity="1" stroke="hsl(var(--color-gray-100))" fill="none" x="50" y="5" width="394" height="99" x1="50" y1="71.00000000000001" x2="444" y2="71.00000000000001"></line><line stroke-opacity="1" stroke="hsl(var(--color-gray-100))" fill="none" x="50" y="5" width="394" height="99" x1="50" y1="5" x2="444" y2="5"></line></g></g><g class="recharts-layer recharts-bar"><g class="recharts-layer recharts-bar-rectangles"><g class="recharts-layer"><g class="recharts-layer recharts-bar-rectangle"><path x="440.27888888888896" y="102.35" width="1" height="1.6500000000000057" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 440.27888888888896,102.85
+            A 0.5,0.5,0,0,1,440.77888888888896,102.35
+            L 440.77888888888896,102.35
+            A 0.5,0.5,0,0,1,441.27888888888896,102.85
+            L 441.27888888888896,103.5
+            A 0.5,0.5,0,0,1,440.77888888888896,104
+            L 440.77888888888896,104
+            A 0.5,0.5,0,0,1,440.27888888888896,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="435.9011111111111" y="100.7" width="1" height="3.299999999999997" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 435.9011111111111,101.2
+            A 0.5,0.5,0,0,1,436.4011111111111,100.7
+            L 436.4011111111111,100.7
+            A 0.5,0.5,0,0,1,436.9011111111111,101.2
+            L 436.9011111111111,103.5
+            A 0.5,0.5,0,0,1,436.4011111111111,104
+            L 436.4011111111111,104
+            A 0.5,0.5,0,0,1,435.9011111111111,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="431.52333333333337" y="99.875" width="1" height="4.125" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 431.52333333333337,100.375
+            A 0.5,0.5,0,0,1,432.02333333333337,99.875
+            L 432.02333333333337,99.875
+            A 0.5,0.5,0,0,1,432.52333333333337,100.375
+            L 432.52333333333337,103.5
+            A 0.5,0.5,0,0,1,432.02333333333337,104
+            L 432.02333333333337,104
+            A 0.5,0.5,0,0,1,431.52333333333337,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"></g><g class="recharts-layer recharts-bar-rectangle"></g><g class="recharts-layer recharts-bar-rectangle"><path x="418.39000000000004" y="101.52499999999999" width="1" height="2.4750000000000085" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 418.39000000000004,102.02499999999999
+            A 0.5,0.5,0,0,1,418.89000000000004,101.52499999999999
+            L 418.89000000000004,101.52499999999999
+            A 0.5,0.5,0,0,1,419.39000000000004,102.02499999999999
+            L 419.39000000000004,103.5
+            A 0.5,0.5,0,0,1,418.89000000000004,104
+            L 418.89000000000004,104
+            A 0.5,0.5,0,0,1,418.39000000000004,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="414.0122222222223" y="99.875" width="1" height="4.125" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 414.0122222222223,100.375
+            A 0.5,0.5,0,0,1,414.5122222222223,99.875
+            L 414.5122222222223,99.875
+            A 0.5,0.5,0,0,1,415.0122222222223,100.375
+            L 415.0122222222223,103.5
+            A 0.5,0.5,0,0,1,414.5122222222223,104
+            L 414.5122222222223,104
+            A 0.5,0.5,0,0,1,414.0122222222223,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="409.63444444444445" y="99.05" width="1" height="4.950000000000003" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 409.63444444444445,99.55
+            A 0.5,0.5,0,0,1,410.13444444444445,99.05
+            L 410.13444444444445,99.05
+            A 0.5,0.5,0,0,1,410.63444444444445,99.55
+            L 410.63444444444445,103.5
+            A 0.5,0.5,0,0,1,410.13444444444445,104
+            L 410.13444444444445,104
+            A 0.5,0.5,0,0,1,409.63444444444445,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="405.2566666666667" y="98.22500000000001" width="1" height="5.7749999999999915" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 405.2566666666667,98.72500000000001
+            A 0.5,0.5,0,0,1,405.7566666666667,98.22500000000001
+            L 405.7566666666667,98.22500000000001
+            A 0.5,0.5,0,0,1,406.2566666666667,98.72500000000001
+            L 406.2566666666667,103.5
+            A 0.5,0.5,0,0,1,405.7566666666667,104
+            L 405.7566666666667,104
+            A 0.5,0.5,0,0,1,405.2566666666667,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="400.878888888889" y="99.05" width="1" height="4.950000000000003" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 400.878888888889,99.55
+            A 0.5,0.5,0,0,1,401.378888888889,99.05
+            L 401.378888888889,99.05
+            A 0.5,0.5,0,0,1,401.878888888889,99.55
+            L 401.878888888889,103.5
+            A 0.5,0.5,0,0,1,401.378888888889,104
+            L 401.378888888889,104
+            A 0.5,0.5,0,0,1,400.878888888889,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="396.50111111111113" y="103.17500000000001" width="1" height="0.8249999999999886" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 396.50111111111113,103.5875
+            A 0.4124999999999943,0.4124999999999943,0,0,1,396.9136111111111,103.17500000000001
+            L 397.08861111111116,103.17500000000001
+            A 0.4124999999999943,0.4124999999999943,0,0,1,397.50111111111113,103.5875
+            L 397.50111111111113,103.5875
+            A 0.4124999999999943,0.4124999999999943,0,0,1,397.08861111111116,104
+            L 396.9136111111111,104
+            A 0.4124999999999943,0.4124999999999943,0,0,1,396.50111111111113,103.5875 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="392.1233333333334" y="101.52499999999999" width="1" height="2.4750000000000085" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 392.1233333333334,102.02499999999999
+            A 0.5,0.5,0,0,1,392.6233333333334,101.52499999999999
+            L 392.6233333333334,101.52499999999999
+            A 0.5,0.5,0,0,1,393.1233333333334,102.02499999999999
+            L 393.1233333333334,103.5
+            A 0.5,0.5,0,0,1,392.6233333333334,104
+            L 392.6233333333334,104
+            A 0.5,0.5,0,0,1,392.1233333333334,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="387.74555555555554" y="101.52499999999999" width="1" height="2.4750000000000085" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 387.74555555555554,102.02499999999999
+            A 0.5,0.5,0,0,1,388.24555555555554,101.52499999999999
+            L 388.24555555555554,101.52499999999999
+            A 0.5,0.5,0,0,1,388.74555555555554,102.02499999999999
+            L 388.74555555555554,103.5
+            A 0.5,0.5,0,0,1,388.24555555555554,104
+            L 388.24555555555554,104
+            A 0.5,0.5,0,0,1,387.74555555555554,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"></g><g class="recharts-layer recharts-bar-rectangle"><path x="378.99000000000007" y="102.35" width="1" height="1.6500000000000057" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 378.99000000000007,102.85
+            A 0.5,0.5,0,0,1,379.49000000000007,102.35
+            L 379.49000000000007,102.35
+            A 0.5,0.5,0,0,1,379.99000000000007,102.85
+            L 379.99000000000007,103.5
+            A 0.5,0.5,0,0,1,379.49000000000007,104
+            L 379.49000000000007,104
+            A 0.5,0.5,0,0,1,378.99000000000007,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="374.6122222222222" y="103.17500000000001" width="1" height="0.8249999999999886" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 374.6122222222222,103.5875
+            A 0.4124999999999943,0.4124999999999943,0,0,1,375.0247222222222,103.17500000000001
+            L 375.19972222222225,103.17500000000001
+            A 0.4124999999999943,0.4124999999999943,0,0,1,375.6122222222222,103.5875
+            L 375.6122222222222,103.5875
+            A 0.4124999999999943,0.4124999999999943,0,0,1,375.19972222222225,104
+            L 375.0247222222222,104
+            A 0.4124999999999943,0.4124999999999943,0,0,1,374.6122222222222,103.5875 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="370.2344444444445" y="102.35" width="1" height="1.6500000000000057" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 370.2344444444445,102.85
+            A 0.5,0.5,0,0,1,370.7344444444445,102.35
+            L 370.7344444444445,102.35
+            A 0.5,0.5,0,0,1,371.2344444444445,102.85
+            L 371.2344444444445,103.5
+            A 0.5,0.5,0,0,1,370.7344444444445,104
+            L 370.7344444444445,104
+            A 0.5,0.5,0,0,1,370.2344444444445,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="365.85666666666674" y="103.17500000000001" width="1" height="0.8249999999999886" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 365.85666666666674,103.5875
+            A 0.4124999999999943,0.4124999999999943,0,0,1,366.2691666666667,103.17500000000001
+            L 366.4441666666668,103.17500000000001
+            A 0.4124999999999943,0.4124999999999943,0,0,1,366.85666666666674,103.5875
+            L 366.85666666666674,103.5875
+            A 0.4124999999999943,0.4124999999999943,0,0,1,366.4441666666668,104
+            L 366.2691666666667,104
+            A 0.4124999999999943,0.4124999999999943,0,0,1,365.85666666666674,103.5875 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="361.4788888888889" y="99.05" width="1" height="4.950000000000003" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 361.4788888888889,99.55
+            A 0.5,0.5,0,0,1,361.9788888888889,99.05
+            L 361.9788888888889,99.05
+            A 0.5,0.5,0,0,1,362.4788888888889,99.55
+            L 362.4788888888889,103.5
+            A 0.5,0.5,0,0,1,361.9788888888889,104
+            L 361.9788888888889,104
+            A 0.5,0.5,0,0,1,361.4788888888889,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="357.10111111111115" y="101.52499999999999" width="1" height="2.4750000000000085" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 357.10111111111115,102.02499999999999
+            A 0.5,0.5,0,0,1,357.60111111111115,101.52499999999999
+            L 357.60111111111115,101.52499999999999
+            A 0.5,0.5,0,0,1,358.10111111111115,102.02499999999999
+            L 358.10111111111115,103.5
+            A 0.5,0.5,0,0,1,357.60111111111115,104
+            L 357.60111111111115,104
+            A 0.5,0.5,0,0,1,357.10111111111115,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="352.7233333333334" y="103.17500000000001" width="1" height="0.8249999999999886" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 352.7233333333334,103.5875
+            A 0.4124999999999943,0.4124999999999943,0,0,1,353.1358333333334,103.17500000000001
+            L 353.31083333333345,103.17500000000001
+            A 0.4124999999999943,0.4124999999999943,0,0,1,353.7233333333334,103.5875
+            L 353.7233333333334,103.5875
+            A 0.4124999999999943,0.4124999999999943,0,0,1,353.31083333333345,104
+            L 353.1358333333334,104
+            A 0.4124999999999943,0.4124999999999943,0,0,1,352.7233333333334,103.5875 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="348.34555555555556" y="103.17500000000001" width="1" height="0.8249999999999886" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 348.34555555555556,103.5875
+            A 0.4124999999999943,0.4124999999999943,0,0,1,348.75805555555553,103.17500000000001
+            L 348.9330555555556,103.17500000000001
+            A 0.4124999999999943,0.4124999999999943,0,0,1,349.34555555555556,103.5875
+            L 349.34555555555556,103.5875
+            A 0.4124999999999943,0.4124999999999943,0,0,1,348.9330555555556,104
+            L 348.75805555555553,104
+            A 0.4124999999999943,0.4124999999999943,0,0,1,348.34555555555556,103.5875 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="343.9677777777778" y="99.05" width="1" height="4.950000000000003" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 343.9677777777778,99.55
+            A 0.5,0.5,0,0,1,344.4677777777778,99.05
+            L 344.4677777777778,99.05
+            A 0.5,0.5,0,0,1,344.9677777777778,99.55
+            L 344.9677777777778,103.5
+            A 0.5,0.5,0,0,1,344.4677777777778,104
+            L 344.4677777777778,104
+            A 0.5,0.5,0,0,1,343.9677777777778,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="339.59" y="99.875" width="1" height="4.125" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 339.59,100.375
+            A 0.5,0.5,0,0,1,340.09,99.875
+            L 340.09,99.875
+            A 0.5,0.5,0,0,1,340.59,100.375
+            L 340.59,103.5
+            A 0.5,0.5,0,0,1,340.09,104
+            L 340.09,104
+            A 0.5,0.5,0,0,1,339.59,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="335.21222222222224" y="100.7" width="1" height="3.299999999999997" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 335.21222222222224,101.2
+            A 0.5,0.5,0,0,1,335.71222222222224,100.7
+            L 335.71222222222224,100.7
+            A 0.5,0.5,0,0,1,336.21222222222224,101.2
+            L 336.21222222222224,103.5
+            A 0.5,0.5,0,0,1,335.71222222222224,104
+            L 335.71222222222224,104
+            A 0.5,0.5,0,0,1,335.21222222222224,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="330.8344444444445" y="103.17500000000001" width="1" height="0.8249999999999886" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 330.8344444444445,103.5875
+            A 0.4124999999999943,0.4124999999999943,0,0,1,331.24694444444447,103.17500000000001
+            L 331.42194444444453,103.17500000000001
+            A 0.4124999999999943,0.4124999999999943,0,0,1,331.8344444444445,103.5875
+            L 331.8344444444445,103.5875
+            A 0.4124999999999943,0.4124999999999943,0,0,1,331.42194444444453,104
+            L 331.24694444444447,104
+            A 0.4124999999999943,0.4124999999999943,0,0,1,330.8344444444445,103.5875 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="326.45666666666665" y="98.22500000000001" width="1" height="5.7749999999999915" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 326.45666666666665,98.72500000000001
+            A 0.5,0.5,0,0,1,326.95666666666665,98.22500000000001
+            L 326.95666666666665,98.22500000000001
+            A 0.5,0.5,0,0,1,327.45666666666665,98.72500000000001
+            L 327.45666666666665,103.5
+            A 0.5,0.5,0,0,1,326.95666666666665,104
+            L 326.95666666666665,104
+            A 0.5,0.5,0,0,1,326.45666666666665,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="322.0788888888889" y="101.52499999999999" width="1" height="2.4750000000000085" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 322.0788888888889,102.02499999999999
+            A 0.5,0.5,0,0,1,322.5788888888889,101.52499999999999
+            L 322.5788888888889,101.52499999999999
+            A 0.5,0.5,0,0,1,323.0788888888889,102.02499999999999
+            L 323.0788888888889,103.5
+            A 0.5,0.5,0,0,1,322.5788888888889,104
+            L 322.5788888888889,104
+            A 0.5,0.5,0,0,1,322.0788888888889,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="317.7011111111112" y="99.05" width="1" height="4.950000000000003" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 317.7011111111112,99.55
+            A 0.5,0.5,0,0,1,318.2011111111112,99.05
+            L 318.2011111111112,99.05
+            A 0.5,0.5,0,0,1,318.7011111111112,99.55
+            L 318.7011111111112,103.5
+            A 0.5,0.5,0,0,1,318.2011111111112,104
+            L 318.2011111111112,104
+            A 0.5,0.5,0,0,1,317.7011111111112,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="313.3233333333333" y="98.22500000000001" width="1" height="5.7749999999999915" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 313.3233333333333,98.72500000000001
+            A 0.5,0.5,0,0,1,313.8233333333333,98.22500000000001
+            L 313.8233333333333,98.22500000000001
+            A 0.5,0.5,0,0,1,314.3233333333333,98.72500000000001
+            L 314.3233333333333,103.5
+            A 0.5,0.5,0,0,1,313.8233333333333,104
+            L 313.8233333333333,104
+            A 0.5,0.5,0,0,1,313.3233333333333,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="308.9455555555556" y="100.7" width="1" height="3.299999999999997" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 308.9455555555556,101.2
+            A 0.5,0.5,0,0,1,309.4455555555556,100.7
+            L 309.4455555555556,100.7
+            A 0.5,0.5,0,0,1,309.9455555555556,101.2
+            L 309.9455555555556,103.5
+            A 0.5,0.5,0,0,1,309.4455555555556,104
+            L 309.4455555555556,104
+            A 0.5,0.5,0,0,1,308.9455555555556,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="304.5677777777778" y="102.35" width="1" height="1.6500000000000057" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 304.5677777777778,102.85
+            A 0.5,0.5,0,0,1,305.0677777777778,102.35
+            L 305.0677777777778,102.35
+            A 0.5,0.5,0,0,1,305.5677777777778,102.85
+            L 305.5677777777778,103.5
+            A 0.5,0.5,0,0,1,305.0677777777778,104
+            L 305.0677777777778,104
+            A 0.5,0.5,0,0,1,304.5677777777778,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="300.19" y="103.17500000000001" width="1" height="0.8249999999999886" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 300.19,103.5875
+            A 0.4124999999999943,0.4124999999999943,0,0,1,300.60249999999996,103.17500000000001
+            L 300.77750000000003,103.17500000000001
+            A 0.4124999999999943,0.4124999999999943,0,0,1,301.19,103.5875
+            L 301.19,103.5875
+            A 0.4124999999999943,0.4124999999999943,0,0,1,300.77750000000003,104
+            L 300.60249999999996,104
+            A 0.4124999999999943,0.4124999999999943,0,0,1,300.19,103.5875 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"></g><g class="recharts-layer recharts-bar-rectangle"><path x="291.43444444444447" y="103.17500000000001" width="1" height="0.8249999999999886" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 291.43444444444447,103.5875
+            A 0.4124999999999943,0.4124999999999943,0,0,1,291.8469444444445,103.17500000000001
+            L 292.02194444444444,103.17500000000001
+            A 0.4124999999999943,0.4124999999999943,0,0,1,292.43444444444447,103.5875
+            L 292.43444444444447,103.5875
+            A 0.4124999999999943,0.4124999999999943,0,0,1,292.02194444444444,104
+            L 291.8469444444445,104
+            A 0.4124999999999943,0.4124999999999943,0,0,1,291.43444444444447,103.5875 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="287.0566666666667" y="99.05" width="1" height="4.950000000000003" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 287.0566666666667,99.55
+            A 0.5,0.5,0,0,1,287.5566666666667,99.05
+            L 287.5566666666667,99.05
+            A 0.5,0.5,0,0,1,288.0566666666667,99.55
+            L 288.0566666666667,103.5
+            A 0.5,0.5,0,0,1,287.5566666666667,104
+            L 287.5566666666667,104
+            A 0.5,0.5,0,0,1,287.0566666666667,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"></g><g class="recharts-layer recharts-bar-rectangle"><path x="278.30111111111114" y="102.35" width="1" height="1.6500000000000057" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 278.30111111111114,102.85
+            A 0.5,0.5,0,0,1,278.80111111111114,102.35
+            L 278.80111111111114,102.35
+            A 0.5,0.5,0,0,1,279.30111111111114,102.85
+            L 279.30111111111114,103.5
+            A 0.5,0.5,0,0,1,278.80111111111114,104
+            L 278.80111111111114,104
+            A 0.5,0.5,0,0,1,278.30111111111114,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="273.92333333333335" y="100.7" width="1" height="3.299999999999997" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 273.92333333333335,101.2
+            A 0.5,0.5,0,0,1,274.42333333333335,100.7
+            L 274.42333333333335,100.7
+            A 0.5,0.5,0,0,1,274.92333333333335,101.2
+            L 274.92333333333335,103.5
+            A 0.5,0.5,0,0,1,274.42333333333335,104
+            L 274.42333333333335,104
+            A 0.5,0.5,0,0,1,273.92333333333335,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="269.5455555555556" y="101.52499999999999" width="1" height="2.4750000000000085" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 269.5455555555556,102.02499999999999
+            A 0.5,0.5,0,0,1,270.0455555555556,101.52499999999999
+            L 270.0455555555556,101.52499999999999
+            A 0.5,0.5,0,0,1,270.5455555555556,102.02499999999999
+            L 270.5455555555556,103.5
+            A 0.5,0.5,0,0,1,270.0455555555556,104
+            L 270.0455555555556,104
+            A 0.5,0.5,0,0,1,269.5455555555556,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="265.16777777777776" y="103.17500000000001" width="1" height="0.8249999999999886" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 265.16777777777776,103.5875
+            A 0.4124999999999943,0.4124999999999943,0,0,1,265.5802777777777,103.17500000000001
+            L 265.7552777777778,103.17500000000001
+            A 0.4124999999999943,0.4124999999999943,0,0,1,266.16777777777776,103.5875
+            L 266.16777777777776,103.5875
+            A 0.4124999999999943,0.4124999999999943,0,0,1,265.7552777777778,104
+            L 265.5802777777777,104
+            A 0.4124999999999943,0.4124999999999943,0,0,1,265.16777777777776,103.5875 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="260.79" y="99.875" width="1" height="4.125" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 260.79,100.375
+            A 0.5,0.5,0,0,1,261.29,99.875
+            L 261.29,99.875
+            A 0.5,0.5,0,0,1,261.79,100.375
+            L 261.79,103.5
+            A 0.5,0.5,0,0,1,261.29,104
+            L 261.29,104
+            A 0.5,0.5,0,0,1,260.79,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="256.4122222222222" y="95.75" width="1" height="8.25" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 256.4122222222222,96.25
+            A 0.5,0.5,0,0,1,256.9122222222222,95.75
+            L 256.9122222222222,95.75
+            A 0.5,0.5,0,0,1,257.4122222222222,96.25
+            L 257.4122222222222,103.5
+            A 0.5,0.5,0,0,1,256.9122222222222,104
+            L 256.9122222222222,104
+            A 0.5,0.5,0,0,1,256.4122222222222,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="252.03444444444443" y="102.35" width="1" height="1.6500000000000057" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 252.03444444444443,102.85
+            A 0.5,0.5,0,0,1,252.53444444444443,102.35
+            L 252.53444444444443,102.35
+            A 0.5,0.5,0,0,1,253.03444444444443,102.85
+            L 253.03444444444443,103.5
+            A 0.5,0.5,0,0,1,252.53444444444443,104
+            L 252.53444444444443,104
+            A 0.5,0.5,0,0,1,252.03444444444443,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="247.65666666666667" y="97.39999999999999" width="1" height="6.6000000000000085" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 247.65666666666667,97.89999999999999
+            A 0.5,0.5,0,0,1,248.15666666666667,97.39999999999999
+            L 248.15666666666667,97.39999999999999
+            A 0.5,0.5,0,0,1,248.65666666666667,97.89999999999999
+            L 248.65666666666667,103.5
+            A 0.5,0.5,0,0,1,248.15666666666667,104
+            L 248.15666666666667,104
+            A 0.5,0.5,0,0,1,247.65666666666667,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="243.27888888888887" y="99.875" width="1" height="4.125" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 243.27888888888887,100.375
+            A 0.5,0.5,0,0,1,243.77888888888887,99.875
+            L 243.77888888888887,99.875
+            A 0.5,0.5,0,0,1,244.27888888888887,100.375
+            L 244.27888888888887,103.5
+            A 0.5,0.5,0,0,1,243.77888888888887,104
+            L 243.77888888888887,104
+            A 0.5,0.5,0,0,1,243.27888888888887,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="238.9011111111111" y="102.35" width="1" height="1.6500000000000057" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 238.9011111111111,102.85
+            A 0.5,0.5,0,0,1,239.4011111111111,102.35
+            L 239.4011111111111,102.35
+            A 0.5,0.5,0,0,1,239.9011111111111,102.85
+            L 239.9011111111111,103.5
+            A 0.5,0.5,0,0,1,239.4011111111111,104
+            L 239.4011111111111,104
+            A 0.5,0.5,0,0,1,238.9011111111111,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="234.5233333333333" y="101.52499999999999" width="1" height="2.4750000000000085" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 234.5233333333333,102.02499999999999
+            A 0.5,0.5,0,0,1,235.0233333333333,101.52499999999999
+            L 235.0233333333333,101.52499999999999
+            A 0.5,0.5,0,0,1,235.5233333333333,102.02499999999999
+            L 235.5233333333333,103.5
+            A 0.5,0.5,0,0,1,235.0233333333333,104
+            L 235.0233333333333,104
+            A 0.5,0.5,0,0,1,234.5233333333333,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="230.14555555555555" y="103.17500000000001" width="1" height="0.8249999999999886" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 230.14555555555555,103.5875
+            A 0.4124999999999943,0.4124999999999943,0,0,1,230.55805555555554,103.17500000000001
+            L 230.73305555555555,103.17500000000001
+            A 0.4124999999999943,0.4124999999999943,0,0,1,231.14555555555555,103.5875
+            L 231.14555555555555,103.5875
+            A 0.4124999999999943,0.4124999999999943,0,0,1,230.73305555555555,104
+            L 230.55805555555554,104
+            A 0.4124999999999943,0.4124999999999943,0,0,1,230.14555555555555,103.5875 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"></g><g class="recharts-layer recharts-bar-rectangle"></g><g class="recharts-layer recharts-bar-rectangle"></g><g class="recharts-layer recharts-bar-rectangle"><path x="212.63444444444443" y="101.52499999999999" width="1" height="2.4750000000000085" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 212.63444444444443,102.02499999999999
+            A 0.5,0.5,0,0,1,213.13444444444443,101.52499999999999
+            L 213.13444444444443,101.52499999999999
+            A 0.5,0.5,0,0,1,213.63444444444443,102.02499999999999
+            L 213.63444444444443,103.5
+            A 0.5,0.5,0,0,1,213.13444444444443,104
+            L 213.13444444444443,104
+            A 0.5,0.5,0,0,1,212.63444444444443,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="208.25666666666666" y="102.35" width="1" height="1.6500000000000057" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 208.25666666666666,102.85
+            A 0.5,0.5,0,0,1,208.75666666666666,102.35
+            L 208.75666666666666,102.35
+            A 0.5,0.5,0,0,1,209.25666666666666,102.85
+            L 209.25666666666666,103.5
+            A 0.5,0.5,0,0,1,208.75666666666666,104
+            L 208.75666666666666,104
+            A 0.5,0.5,0,0,1,208.25666666666666,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="203.87888888888887" y="102.35" width="1" height="1.6500000000000057" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 203.87888888888887,102.85
+            A 0.5,0.5,0,0,1,204.37888888888887,102.35
+            L 204.37888888888887,102.35
+            A 0.5,0.5,0,0,1,204.87888888888887,102.85
+            L 204.87888888888887,103.5
+            A 0.5,0.5,0,0,1,204.37888888888887,104
+            L 204.37888888888887,104
+            A 0.5,0.5,0,0,1,203.87888888888887,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"></g><g class="recharts-layer recharts-bar-rectangle"><path x="195.1233333333333" y="101.52499999999999" width="1" height="2.4750000000000085" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 195.1233333333333,102.02499999999999
+            A 0.5,0.5,0,0,1,195.6233333333333,101.52499999999999
+            L 195.6233333333333,101.52499999999999
+            A 0.5,0.5,0,0,1,196.1233333333333,102.02499999999999
+            L 196.1233333333333,103.5
+            A 0.5,0.5,0,0,1,195.6233333333333,104
+            L 195.6233333333333,104
+            A 0.5,0.5,0,0,1,195.1233333333333,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="190.74555555555554" y="103.17500000000001" width="1" height="0.8249999999999886" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 190.74555555555554,103.5875
+            A 0.4124999999999943,0.4124999999999943,0,0,1,191.15805555555553,103.17500000000001
+            L 191.33305555555555,103.17500000000001
+            A 0.4124999999999943,0.4124999999999943,0,0,1,191.74555555555554,103.5875
+            L 191.74555555555554,103.5875
+            A 0.4124999999999943,0.4124999999999943,0,0,1,191.33305555555555,104
+            L 191.15805555555553,104
+            A 0.4124999999999943,0.4124999999999943,0,0,1,190.74555555555554,103.5875 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="186.36777777777777" y="99.05" width="1" height="4.950000000000003" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 186.36777777777777,99.55
+            A 0.5,0.5,0,0,1,186.86777777777777,99.05
+            L 186.86777777777777,99.05
+            A 0.5,0.5,0,0,1,187.36777777777777,99.55
+            L 187.36777777777777,103.5
+            A 0.5,0.5,0,0,1,186.86777777777777,104
+            L 186.86777777777777,104
+            A 0.5,0.5,0,0,1,186.36777777777777,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="181.98999999999998" y="94.925" width="1" height="9.075000000000003" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 181.98999999999998,95.425
+            A 0.5,0.5,0,0,1,182.48999999999998,94.925
+            L 182.48999999999998,94.925
+            A 0.5,0.5,0,0,1,182.98999999999998,95.425
+            L 182.98999999999998,103.5
+            A 0.5,0.5,0,0,1,182.48999999999998,104
+            L 182.48999999999998,104
+            A 0.5,0.5,0,0,1,181.98999999999998,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="177.6122222222222" y="99.05" width="1" height="4.950000000000003" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 177.6122222222222,99.55
+            A 0.5,0.5,0,0,1,178.1122222222222,99.05
+            L 178.1122222222222,99.05
+            A 0.5,0.5,0,0,1,178.6122222222222,99.55
+            L 178.6122222222222,103.5
+            A 0.5,0.5,0,0,1,178.1122222222222,104
+            L 178.1122222222222,104
+            A 0.5,0.5,0,0,1,177.6122222222222,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="173.23444444444442" y="102.35" width="1" height="1.6500000000000057" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 173.23444444444442,102.85
+            A 0.5,0.5,0,0,1,173.73444444444442,102.35
+            L 173.73444444444442,102.35
+            A 0.5,0.5,0,0,1,174.23444444444442,102.85
+            L 174.23444444444442,103.5
+            A 0.5,0.5,0,0,1,173.73444444444442,104
+            L 173.73444444444442,104
+            A 0.5,0.5,0,0,1,173.23444444444442,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="168.85666666666665" y="101.52499999999999" width="1" height="2.4750000000000085" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 168.85666666666665,102.02499999999999
+            A 0.5,0.5,0,0,1,169.35666666666665,101.52499999999999
+            L 169.35666666666665,101.52499999999999
+            A 0.5,0.5,0,0,1,169.85666666666665,102.02499999999999
+            L 169.85666666666665,103.5
+            A 0.5,0.5,0,0,1,169.35666666666665,104
+            L 169.35666666666665,104
+            A 0.5,0.5,0,0,1,168.85666666666665,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="164.47888888888886" y="99.05" width="1" height="4.950000000000003" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 164.47888888888886,99.55
+            A 0.5,0.5,0,0,1,164.97888888888886,99.05
+            L 164.97888888888886,99.05
+            A 0.5,0.5,0,0,1,165.47888888888886,99.55
+            L 165.47888888888886,103.5
+            A 0.5,0.5,0,0,1,164.97888888888886,104
+            L 164.97888888888886,104
+            A 0.5,0.5,0,0,1,164.47888888888886,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="160.1011111111111" y="101.52499999999999" width="1" height="2.4750000000000085" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 160.1011111111111,102.02499999999999
+            A 0.5,0.5,0,0,1,160.6011111111111,101.52499999999999
+            L 160.6011111111111,101.52499999999999
+            A 0.5,0.5,0,0,1,161.1011111111111,102.02499999999999
+            L 161.1011111111111,103.5
+            A 0.5,0.5,0,0,1,160.6011111111111,104
+            L 160.6011111111111,104
+            A 0.5,0.5,0,0,1,160.1011111111111,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="155.72333333333333" y="100.7" width="1" height="3.299999999999997" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 155.72333333333333,101.2
+            A 0.5,0.5,0,0,1,156.22333333333333,100.7
+            L 156.22333333333333,100.7
+            A 0.5,0.5,0,0,1,156.72333333333333,101.2
+            L 156.72333333333333,103.5
+            A 0.5,0.5,0,0,1,156.22333333333333,104
+            L 156.22333333333333,104
+            A 0.5,0.5,0,0,1,155.72333333333333,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="151.34555555555553" y="101.52499999999999" width="1" height="2.4750000000000085" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 151.34555555555553,102.02499999999999
+            A 0.5,0.5,0,0,1,151.84555555555553,101.52499999999999
+            L 151.84555555555553,101.52499999999999
+            A 0.5,0.5,0,0,1,152.34555555555553,102.02499999999999
+            L 152.34555555555553,103.5
+            A 0.5,0.5,0,0,1,151.84555555555553,104
+            L 151.84555555555553,104
+            A 0.5,0.5,0,0,1,151.34555555555553,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="146.96777777777774" y="99.05" width="1" height="4.950000000000003" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 146.96777777777774,99.55
+            A 0.5,0.5,0,0,1,147.46777777777774,99.05
+            L 147.46777777777774,99.05
+            A 0.5,0.5,0,0,1,147.96777777777774,99.55
+            L 147.96777777777774,103.5
+            A 0.5,0.5,0,0,1,147.46777777777774,104
+            L 147.46777777777774,104
+            A 0.5,0.5,0,0,1,146.96777777777774,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="142.58999999999997" y="97.39999999999999" width="1" height="6.6000000000000085" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 142.58999999999997,97.89999999999999
+            A 0.5,0.5,0,0,1,143.08999999999997,97.39999999999999
+            L 143.08999999999997,97.39999999999999
+            A 0.5,0.5,0,0,1,143.58999999999997,97.89999999999999
+            L 143.58999999999997,103.5
+            A 0.5,0.5,0,0,1,143.08999999999997,104
+            L 143.08999999999997,104
+            A 0.5,0.5,0,0,1,142.58999999999997,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="138.2122222222222" y="102.35" width="1" height="1.6500000000000057" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 138.2122222222222,102.85
+            A 0.5,0.5,0,0,1,138.7122222222222,102.35
+            L 138.7122222222222,102.35
+            A 0.5,0.5,0,0,1,139.2122222222222,102.85
+            L 139.2122222222222,103.5
+            A 0.5,0.5,0,0,1,138.7122222222222,104
+            L 138.7122222222222,104
+            A 0.5,0.5,0,0,1,138.2122222222222,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="133.83444444444442" y="102.35" width="1" height="1.6500000000000057" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 133.83444444444442,102.85
+            A 0.5,0.5,0,0,1,134.33444444444442,102.35
+            L 134.33444444444442,102.35
+            A 0.5,0.5,0,0,1,134.83444444444442,102.85
+            L 134.83444444444442,103.5
+            A 0.5,0.5,0,0,1,134.33444444444442,104
+            L 134.33444444444442,104
+            A 0.5,0.5,0,0,1,133.83444444444442,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="129.45666666666665" y="103.17500000000001" width="1" height="0.8249999999999886" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 129.45666666666665,103.5875
+            A 0.4124999999999943,0.4124999999999943,0,0,1,129.86916666666664,103.17500000000001
+            L 130.04416666666665,103.17500000000001
+            A 0.4124999999999943,0.4124999999999943,0,0,1,130.45666666666665,103.5875
+            L 130.45666666666665,103.5875
+            A 0.4124999999999943,0.4124999999999943,0,0,1,130.04416666666665,104
+            L 129.86916666666664,104
+            A 0.4124999999999943,0.4124999999999943,0,0,1,129.45666666666665,103.5875 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="125.07888888888887" y="102.35" width="1" height="1.6500000000000057" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 125.07888888888887,102.85
+            A 0.5,0.5,0,0,1,125.57888888888887,102.35
+            L 125.57888888888887,102.35
+            A 0.5,0.5,0,0,1,126.07888888888887,102.85
+            L 126.07888888888887,103.5
+            A 0.5,0.5,0,0,1,125.57888888888887,104
+            L 125.57888888888887,104
+            A 0.5,0.5,0,0,1,125.07888888888887,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="120.70111111111109" y="102.35" width="1" height="1.6500000000000057" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 120.70111111111109,102.85
+            A 0.5,0.5,0,0,1,121.20111111111109,102.35
+            L 121.20111111111109,102.35
+            A 0.5,0.5,0,0,1,121.70111111111109,102.85
+            L 121.70111111111109,103.5
+            A 0.5,0.5,0,0,1,121.20111111111109,104
+            L 121.20111111111109,104
+            A 0.5,0.5,0,0,1,120.70111111111109,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="116.32333333333331" y="102.35" width="1" height="1.6500000000000057" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 116.32333333333331,102.85
+            A 0.5,0.5,0,0,1,116.82333333333331,102.35
+            L 116.82333333333331,102.35
+            A 0.5,0.5,0,0,1,117.32333333333331,102.85
+            L 117.32333333333331,103.5
+            A 0.5,0.5,0,0,1,116.82333333333331,104
+            L 116.82333333333331,104
+            A 0.5,0.5,0,0,1,116.32333333333331,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"></g><g class="recharts-layer recharts-bar-rectangle"><path x="107.56777777777776" y="102.35" width="1" height="1.6500000000000057" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 107.56777777777776,102.85
+            A 0.5,0.5,0,0,1,108.06777777777776,102.35
+            L 108.06777777777776,102.35
+            A 0.5,0.5,0,0,1,108.56777777777776,102.85
+            L 108.56777777777776,103.5
+            A 0.5,0.5,0,0,1,108.06777777777776,104
+            L 108.06777777777776,104
+            A 0.5,0.5,0,0,1,107.56777777777776,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="103.18999999999997" y="103.17500000000001" width="1" height="0.8249999999999886" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 103.18999999999997,103.5875
+            A 0.4124999999999943,0.4124999999999943,0,0,1,103.60249999999996,103.17500000000001
+            L 103.77749999999997,103.17500000000001
+            A 0.4124999999999943,0.4124999999999943,0,0,1,104.18999999999997,103.5875
+            L 104.18999999999997,103.5875
+            A 0.4124999999999943,0.4124999999999943,0,0,1,103.77749999999997,104
+            L 103.60249999999996,104
+            A 0.4124999999999943,0.4124999999999943,0,0,1,103.18999999999997,103.5875 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="98.8122222222222" y="99.875" width="1" height="4.125" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 98.8122222222222,100.375
+            A 0.5,0.5,0,0,1,99.3122222222222,99.875
+            L 99.3122222222222,99.875
+            A 0.5,0.5,0,0,1,99.8122222222222,100.375
+            L 99.8122222222222,103.5
+            A 0.5,0.5,0,0,1,99.3122222222222,104
+            L 99.3122222222222,104
+            A 0.5,0.5,0,0,1,98.8122222222222,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="94.43444444444442" y="101.52499999999999" width="1" height="2.4750000000000085" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 94.43444444444442,102.02499999999999
+            A 0.5,0.5,0,0,1,94.93444444444442,101.52499999999999
+            L 94.93444444444442,101.52499999999999
+            A 0.5,0.5,0,0,1,95.43444444444442,102.02499999999999
+            L 95.43444444444442,103.5
+            A 0.5,0.5,0,0,1,94.93444444444442,104
+            L 94.93444444444442,104
+            A 0.5,0.5,0,0,1,94.43444444444442,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="90.05666666666664" y="103.17500000000001" width="1" height="0.8249999999999886" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 90.05666666666664,103.5875
+            A 0.4124999999999943,0.4124999999999943,0,0,1,90.46916666666664,103.17500000000001
+            L 90.64416666666665,103.17500000000001
+            A 0.4124999999999943,0.4124999999999943,0,0,1,91.05666666666664,103.5875
+            L 91.05666666666664,103.5875
+            A 0.4124999999999943,0.4124999999999943,0,0,1,90.64416666666665,104
+            L 90.46916666666664,104
+            A 0.4124999999999943,0.4124999999999943,0,0,1,90.05666666666664,103.5875 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="85.67888888888886" y="94.10000000000001" width="1" height="9.899999999999991" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 85.67888888888886,94.60000000000001
+            A 0.5,0.5,0,0,1,86.17888888888886,94.10000000000001
+            L 86.17888888888886,94.10000000000001
+            A 0.5,0.5,0,0,1,86.67888888888886,94.60000000000001
+            L 86.67888888888886,103.5
+            A 0.5,0.5,0,0,1,86.17888888888886,104
+            L 86.17888888888886,104
+            A 0.5,0.5,0,0,1,85.67888888888886,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="81.30111111111108" y="90.80000000000001" width="1" height="13.199999999999989" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 81.30111111111108,91.30000000000001
+            A 0.5,0.5,0,0,1,81.80111111111108,90.80000000000001
+            L 81.80111111111108,90.80000000000001
+            A 0.5,0.5,0,0,1,82.30111111111108,91.30000000000001
+            L 82.30111111111108,103.5
+            A 0.5,0.5,0,0,1,81.80111111111108,104
+            L 81.80111111111108,104
+            A 0.5,0.5,0,0,1,81.30111111111108,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="76.9233333333333" y="101.52499999999999" width="1" height="2.4750000000000085" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 76.9233333333333,102.02499999999999
+            A 0.5,0.5,0,0,1,77.4233333333333,101.52499999999999
+            L 77.4233333333333,101.52499999999999
+            A 0.5,0.5,0,0,1,77.9233333333333,102.02499999999999
+            L 77.9233333333333,103.5
+            A 0.5,0.5,0,0,1,77.4233333333333,104
+            L 77.4233333333333,104
+            A 0.5,0.5,0,0,1,76.9233333333333,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="72.54555555555552" y="87.5" width="1" height="16.5" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 72.54555555555552,88
+            A 0.5,0.5,0,0,1,73.04555555555552,87.5
+            L 73.04555555555552,87.5
+            A 0.5,0.5,0,0,1,73.54555555555552,88
+            L 73.54555555555552,103.5
+            A 0.5,0.5,0,0,1,73.04555555555552,104
+            L 73.04555555555552,104
+            A 0.5,0.5,0,0,1,72.54555555555552,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="68.16777777777776" y="101.52499999999999" width="1" height="2.4750000000000085" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 68.16777777777776,102.02499999999999
+            A 0.5,0.5,0,0,1,68.66777777777776,101.52499999999999
+            L 68.66777777777776,101.52499999999999
+            A 0.5,0.5,0,0,1,69.16777777777776,102.02499999999999
+            L 69.16777777777776,103.5
+            A 0.5,0.5,0,0,1,68.66777777777776,104
+            L 68.66777777777776,104
+            A 0.5,0.5,0,0,1,68.16777777777776,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="63.78999999999997" y="92.44999999999999" width="1" height="11.550000000000011" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 63.78999999999997,92.94999999999999
+            A 0.5,0.5,0,0,1,64.28999999999996,92.44999999999999
+            L 64.28999999999996,92.44999999999999
+            A 0.5,0.5,0,0,1,64.78999999999996,92.94999999999999
+            L 64.78999999999996,103.5
+            A 0.5,0.5,0,0,1,64.28999999999996,104
+            L 64.28999999999996,104
+            A 0.5,0.5,0,0,1,63.78999999999997,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="59.4122222222222" y="93.27499999999999" width="1" height="10.725000000000009" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 59.4122222222222,93.77499999999999
+            A 0.5,0.5,0,0,1,59.9122222222222,93.27499999999999
+            L 59.9122222222222,93.27499999999999
+            A 0.5,0.5,0,0,1,60.4122222222222,93.77499999999999
+            L 60.4122222222222,103.5
+            A 0.5,0.5,0,0,1,59.9122222222222,104
+            L 59.9122222222222,104
+            A 0.5,0.5,0,0,1,59.4122222222222,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="55.03444444444442" y="103.17500000000001" width="1" height="0.8249999999999886" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 55.03444444444442,103.5875
+            A 0.4124999999999943,0.4124999999999943,0,0,1,55.44694444444441,103.17500000000001
+            L 55.62194444444442,103.17500000000001
+            A 0.4124999999999943,0.4124999999999943,0,0,1,56.03444444444442,103.5875
+            L 56.03444444444442,103.5875
+            A 0.4124999999999943,0.4124999999999943,0,0,1,55.62194444444442,104
+            L 55.44694444444441,104
+            A 0.4124999999999943,0.4124999999999943,0,0,1,55.03444444444442,103.5875 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="50.65666666666664" y="101.52499999999999" width="1" height="2.4750000000000085" radius="2" fill="var(--color-Posts)" stroke-width="3" class="recharts-rectangle" d="M 50.65666666666664,102.02499999999999
+            A 0.5,0.5,0,0,1,51.15666666666664,101.52499999999999
+            L 51.15666666666664,101.52499999999999
+            A 0.5,0.5,0,0,1,51.65666666666664,102.02499999999999
+            L 51.65666666666664,103.5
+            A 0.5,0.5,0,0,1,51.15666666666664,104
+            L 51.15666666666664,104
+            A 0.5,0.5,0,0,1,50.65666666666664,103.5 Z"></path></g></g></g><g class="recharts-layer"></g></g><g class="recharts-layer recharts-bar"><g class="recharts-layer recharts-bar-rectangles"><g class="recharts-layer"><g class="recharts-layer recharts-bar-rectangle"><path x="441.7166666666667" y="91.625" width="1" height="12.375" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 441.7166666666667,92.125
+            A 0.5,0.5,0,0,1,442.2166666666667,91.625
+            L 442.2166666666667,91.625
+            A 0.5,0.5,0,0,1,442.7166666666667,92.125
+            L 442.7166666666667,103.5
+            A 0.5,0.5,0,0,1,442.2166666666667,104
+            L 442.2166666666667,104
+            A 0.5,0.5,0,0,1,441.7166666666667,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="437.33888888888885" y="81.72500000000001" width="1" height="22.27499999999999" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 437.33888888888885,82.22500000000001
+            A 0.5,0.5,0,0,1,437.83888888888885,81.72500000000001
+            L 437.83888888888885,81.72500000000001
+            A 0.5,0.5,0,0,1,438.33888888888885,82.22500000000001
+            L 438.33888888888885,103.5
+            A 0.5,0.5,0,0,1,437.83888888888885,104
+            L 437.83888888888885,104
+            A 0.5,0.5,0,0,1,437.33888888888885,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="432.9611111111111" y="71.00000000000001" width="1" height="32.999999999999986" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 432.9611111111111,71.50000000000001
+            A 0.5,0.5,0,0,1,433.4611111111111,71.00000000000001
+            L 433.4611111111111,71.00000000000001
+            A 0.5,0.5,0,0,1,433.9611111111111,71.50000000000001
+            L 433.9611111111111,103.5
+            A 0.5,0.5,0,0,1,433.4611111111111,104
+            L 433.4611111111111,104
+            A 0.5,0.5,0,0,1,432.9611111111111,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="428.58333333333337" y="86.675" width="1" height="17.325000000000003" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 428.58333333333337,87.175
+            A 0.5,0.5,0,0,1,429.08333333333337,86.675
+            L 429.08333333333337,86.675
+            A 0.5,0.5,0,0,1,429.58333333333337,87.175
+            L 429.58333333333337,103.5
+            A 0.5,0.5,0,0,1,429.08333333333337,104
+            L 429.08333333333337,104
+            A 0.5,0.5,0,0,1,428.58333333333337,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="424.2055555555555" y="89.14999999999999" width="1" height="14.850000000000009" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 424.2055555555555,89.64999999999999
+            A 0.5,0.5,0,0,1,424.7055555555555,89.14999999999999
+            L 424.7055555555555,89.14999999999999
+            A 0.5,0.5,0,0,1,425.2055555555555,89.64999999999999
+            L 425.2055555555555,103.5
+            A 0.5,0.5,0,0,1,424.7055555555555,104
+            L 424.7055555555555,104
+            A 0.5,0.5,0,0,1,424.2055555555555,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="419.8277777777778" y="94.10000000000001" width="1" height="9.899999999999991" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 419.8277777777778,94.60000000000001
+            A 0.5,0.5,0,0,1,420.3277777777778,94.10000000000001
+            L 420.3277777777778,94.10000000000001
+            A 0.5,0.5,0,0,1,420.8277777777778,94.60000000000001
+            L 420.8277777777778,103.5
+            A 0.5,0.5,0,0,1,420.3277777777778,104
+            L 420.3277777777778,104
+            A 0.5,0.5,0,0,1,419.8277777777778,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="415.45000000000005" y="75.12499999999999" width="1" height="28.875000000000014" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 415.45000000000005,75.62499999999999
+            A 0.5,0.5,0,0,1,415.95000000000005,75.12499999999999
+            L 415.95000000000005,75.12499999999999
+            A 0.5,0.5,0,0,1,416.45000000000005,75.62499999999999
+            L 416.45000000000005,103.5
+            A 0.5,0.5,0,0,1,415.95000000000005,104
+            L 415.95000000000005,104
+            A 0.5,0.5,0,0,1,415.45000000000005,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="411.0722222222222" y="76.77499999999999" width="1" height="27.22500000000001" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 411.0722222222222,77.27499999999999
+            A 0.5,0.5,0,0,1,411.5722222222222,76.77499999999999
+            L 411.5722222222222,76.77499999999999
+            A 0.5,0.5,0,0,1,412.0722222222222,77.27499999999999
+            L 412.0722222222222,103.5
+            A 0.5,0.5,0,0,1,411.5722222222222,104
+            L 411.5722222222222,104
+            A 0.5,0.5,0,0,1,411.0722222222222,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="406.69444444444446" y="70.175" width="1" height="33.825" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 406.69444444444446,70.675
+            A 0.5,0.5,0,0,1,407.19444444444446,70.175
+            L 407.19444444444446,70.175
+            A 0.5,0.5,0,0,1,407.69444444444446,70.675
+            L 407.69444444444446,103.5
+            A 0.5,0.5,0,0,1,407.19444444444446,104
+            L 407.19444444444446,104
+            A 0.5,0.5,0,0,1,406.69444444444446,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="402.3166666666667" y="61.099999999999994" width="1" height="42.900000000000006" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 402.3166666666667,61.599999999999994
+            A 0.5,0.5,0,0,1,402.8166666666667,61.099999999999994
+            L 402.8166666666667,61.099999999999994
+            A 0.5,0.5,0,0,1,403.3166666666667,61.599999999999994
+            L 403.3166666666667,103.5
+            A 0.5,0.5,0,0,1,402.8166666666667,104
+            L 402.8166666666667,104
+            A 0.5,0.5,0,0,1,402.3166666666667,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="397.93888888888887" y="81.72500000000001" width="1" height="22.27499999999999" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 397.93888888888887,82.22500000000001
+            A 0.5,0.5,0,0,1,398.43888888888887,81.72500000000001
+            L 398.43888888888887,81.72500000000001
+            A 0.5,0.5,0,0,1,398.93888888888887,82.22500000000001
+            L 398.93888888888887,103.5
+            A 0.5,0.5,0,0,1,398.43888888888887,104
+            L 398.43888888888887,104
+            A 0.5,0.5,0,0,1,397.93888888888887,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="393.56111111111113" y="79.25" width="1" height="24.75" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 393.56111111111113,79.75
+            A 0.5,0.5,0,0,1,394.06111111111113,79.25
+            L 394.06111111111113,79.25
+            A 0.5,0.5,0,0,1,394.56111111111113,79.75
+            L 394.56111111111113,103.5
+            A 0.5,0.5,0,0,1,394.06111111111113,104
+            L 394.06111111111113,104
+            A 0.5,0.5,0,0,1,393.56111111111113,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="389.1833333333333" y="73.47500000000001" width="1" height="30.52499999999999" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 389.1833333333333,73.97500000000001
+            A 0.5,0.5,0,0,1,389.6833333333333,73.47500000000001
+            L 389.6833333333333,73.47500000000001
+            A 0.5,0.5,0,0,1,390.1833333333333,73.97500000000001
+            L 390.1833333333333,103.5
+            A 0.5,0.5,0,0,1,389.6833333333333,104
+            L 389.6833333333333,104
+            A 0.5,0.5,0,0,1,389.1833333333333,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="384.80555555555554" y="78.42500000000001" width="1" height="25.57499999999999" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 384.80555555555554,78.92500000000001
+            A 0.5,0.5,0,0,1,385.30555555555554,78.42500000000001
+            L 385.30555555555554,78.42500000000001
+            A 0.5,0.5,0,0,1,385.80555555555554,78.92500000000001
+            L 385.80555555555554,103.5
+            A 0.5,0.5,0,0,1,385.30555555555554,104
+            L 385.30555555555554,104
+            A 0.5,0.5,0,0,1,384.80555555555554,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="380.4277777777778" y="95.75" width="1" height="8.25" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 380.4277777777778,96.25
+            A 0.5,0.5,0,0,1,380.9277777777778,95.75
+            L 380.9277777777778,95.75
+            A 0.5,0.5,0,0,1,381.4277777777778,96.25
+            L 381.4277777777778,103.5
+            A 0.5,0.5,0,0,1,380.9277777777778,104
+            L 380.9277777777778,104
+            A 0.5,0.5,0,0,1,380.4277777777778,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="376.04999999999995" y="90.80000000000001" width="1" height="13.199999999999989" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 376.04999999999995,91.30000000000001
+            A 0.5,0.5,0,0,1,376.54999999999995,90.80000000000001
+            L 376.54999999999995,90.80000000000001
+            A 0.5,0.5,0,0,1,377.04999999999995,91.30000000000001
+            L 377.04999999999995,103.5
+            A 0.5,0.5,0,0,1,376.54999999999995,104
+            L 376.54999999999995,104
+            A 0.5,0.5,0,0,1,376.04999999999995,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="371.6722222222222" y="76.77499999999999" width="1" height="27.22500000000001" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 371.6722222222222,77.27499999999999
+            A 0.5,0.5,0,0,1,372.1722222222222,76.77499999999999
+            L 372.1722222222222,76.77499999999999
+            A 0.5,0.5,0,0,1,372.6722222222222,77.27499999999999
+            L 372.6722222222222,103.5
+            A 0.5,0.5,0,0,1,372.1722222222222,104
+            L 372.1722222222222,104
+            A 0.5,0.5,0,0,1,371.6722222222222,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="367.2944444444445" y="76.77499999999999" width="1" height="27.22500000000001" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 367.2944444444445,77.27499999999999
+            A 0.5,0.5,0,0,1,367.7944444444445,76.77499999999999
+            L 367.7944444444445,76.77499999999999
+            A 0.5,0.5,0,0,1,368.2944444444445,77.27499999999999
+            L 368.2944444444445,103.5
+            A 0.5,0.5,0,0,1,367.7944444444445,104
+            L 367.7944444444445,104
+            A 0.5,0.5,0,0,1,367.2944444444445,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="362.91666666666663" y="79.25" width="1" height="24.75" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 362.91666666666663,79.75
+            A 0.5,0.5,0,0,1,363.41666666666663,79.25
+            L 363.41666666666663,79.25
+            A 0.5,0.5,0,0,1,363.91666666666663,79.75
+            L 363.91666666666663,103.5
+            A 0.5,0.5,0,0,1,363.41666666666663,104
+            L 363.41666666666663,104
+            A 0.5,0.5,0,0,1,362.91666666666663,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="358.5388888888889" y="89.14999999999999" width="1" height="14.850000000000009" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 358.5388888888889,89.64999999999999
+            A 0.5,0.5,0,0,1,359.0388888888889,89.14999999999999
+            L 359.0388888888889,89.14999999999999
+            A 0.5,0.5,0,0,1,359.5388888888889,89.64999999999999
+            L 359.5388888888889,103.5
+            A 0.5,0.5,0,0,1,359.0388888888889,104
+            L 359.0388888888889,104
+            A 0.5,0.5,0,0,1,358.5388888888889,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="354.16111111111115" y="90.80000000000001" width="1" height="13.199999999999989" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 354.16111111111115,91.30000000000001
+            A 0.5,0.5,0,0,1,354.66111111111115,90.80000000000001
+            L 354.66111111111115,90.80000000000001
+            A 0.5,0.5,0,0,1,355.16111111111115,91.30000000000001
+            L 355.16111111111115,103.5
+            A 0.5,0.5,0,0,1,354.66111111111115,104
+            L 354.66111111111115,104
+            A 0.5,0.5,0,0,1,354.16111111111115,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="349.7833333333333" y="89.97500000000001" width="1" height="14.024999999999991" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 349.7833333333333,90.47500000000001
+            A 0.5,0.5,0,0,1,350.2833333333333,89.97500000000001
+            L 350.2833333333333,89.97500000000001
+            A 0.5,0.5,0,0,1,350.7833333333333,90.47500000000001
+            L 350.7833333333333,103.5
+            A 0.5,0.5,0,0,1,350.2833333333333,104
+            L 350.2833333333333,104
+            A 0.5,0.5,0,0,1,349.7833333333333,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="345.40555555555557" y="79.25" width="1" height="24.75" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 345.40555555555557,79.75
+            A 0.5,0.5,0,0,1,345.90555555555557,79.25
+            L 345.90555555555557,79.25
+            A 0.5,0.5,0,0,1,346.40555555555557,79.75
+            L 346.40555555555557,103.5
+            A 0.5,0.5,0,0,1,345.90555555555557,104
+            L 345.90555555555557,104
+            A 0.5,0.5,0,0,1,345.40555555555557,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="341.0277777777777" y="55.324999999999996" width="1" height="48.675000000000004" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 341.0277777777777,55.824999999999996
+            A 0.5,0.5,0,0,1,341.5277777777777,55.324999999999996
+            L 341.5277777777777,55.324999999999996
+            A 0.5,0.5,0,0,1,342.0277777777777,55.824999999999996
+            L 342.0277777777777,103.5
+            A 0.5,0.5,0,0,1,341.5277777777777,104
+            L 341.5277777777777,104
+            A 0.5,0.5,0,0,1,341.0277777777777,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="336.65" y="40.474999999999994" width="1" height="63.525000000000006" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 336.65,40.974999999999994
+            A 0.5,0.5,0,0,1,337.15,40.474999999999994
+            L 337.15,40.474999999999994
+            A 0.5,0.5,0,0,1,337.65,40.974999999999994
+            L 337.65,103.5
+            A 0.5,0.5,0,0,1,337.15,104
+            L 337.15,104
+            A 0.5,0.5,0,0,1,336.65,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="332.27222222222224" y="75.95" width="1" height="28.049999999999997" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 332.27222222222224,76.45
+            A 0.5,0.5,0,0,1,332.77222222222224,75.95
+            L 332.77222222222224,75.95
+            A 0.5,0.5,0,0,1,333.27222222222224,76.45
+            L 333.27222222222224,103.5
+            A 0.5,0.5,0,0,1,332.77222222222224,104
+            L 332.77222222222224,104
+            A 0.5,0.5,0,0,1,332.27222222222224,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="327.8944444444444" y="81.72500000000001" width="1" height="22.27499999999999" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 327.8944444444444,82.22500000000001
+            A 0.5,0.5,0,0,1,328.3944444444444,81.72500000000001
+            L 328.3944444444444,81.72500000000001
+            A 0.5,0.5,0,0,1,328.8944444444444,82.22500000000001
+            L 328.8944444444444,103.5
+            A 0.5,0.5,0,0,1,328.3944444444444,104
+            L 328.3944444444444,104
+            A 0.5,0.5,0,0,1,327.8944444444444,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="323.51666666666665" y="43.775000000000006" width="1" height="60.224999999999994" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 323.51666666666665,44.275000000000006
+            A 0.5,0.5,0,0,1,324.01666666666665,43.775000000000006
+            L 324.01666666666665,43.775000000000006
+            A 0.5,0.5,0,0,1,324.51666666666665,44.275000000000006
+            L 324.51666666666665,103.5
+            A 0.5,0.5,0,0,1,324.01666666666665,104
+            L 324.01666666666665,104
+            A 0.5,0.5,0,0,1,323.51666666666665,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="319.1388888888889" y="82.55" width="1" height="21.450000000000003" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 319.1388888888889,83.05
+            A 0.5,0.5,0,0,1,319.6388888888889,82.55
+            L 319.6388888888889,82.55
+            A 0.5,0.5,0,0,1,320.1388888888889,83.05
+            L 320.1388888888889,103.5
+            A 0.5,0.5,0,0,1,319.6388888888889,104
+            L 319.6388888888889,104
+            A 0.5,0.5,0,0,1,319.1388888888889,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="314.76111111111106" y="56.975" width="1" height="47.025" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 314.76111111111106,57.475
+            A 0.5,0.5,0,0,1,315.26111111111106,56.975
+            L 315.26111111111106,56.975
+            A 0.5,0.5,0,0,1,315.76111111111106,57.475
+            L 315.76111111111106,103.5
+            A 0.5,0.5,0,0,1,315.26111111111106,104
+            L 315.26111111111106,104
+            A 0.5,0.5,0,0,1,314.76111111111106,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="310.3833333333333" y="75.95" width="1" height="28.049999999999997" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 310.3833333333333,76.45
+            A 0.5,0.5,0,0,1,310.8833333333333,75.95
+            L 310.8833333333333,75.95
+            A 0.5,0.5,0,0,1,311.3833333333333,76.45
+            L 311.3833333333333,103.5
+            A 0.5,0.5,0,0,1,310.8833333333333,104
+            L 310.8833333333333,104
+            A 0.5,0.5,0,0,1,310.3833333333333,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="306.00555555555553" y="61.925" width="1" height="42.075" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 306.00555555555553,62.425
+            A 0.5,0.5,0,0,1,306.50555555555553,61.925
+            L 306.50555555555553,61.925
+            A 0.5,0.5,0,0,1,307.00555555555553,62.425
+            L 307.00555555555553,103.5
+            A 0.5,0.5,0,0,1,306.50555555555553,104
+            L 306.50555555555553,104
+            A 0.5,0.5,0,0,1,306.00555555555553,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="301.62777777777774" y="89.14999999999999" width="1" height="14.850000000000009" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 301.62777777777774,89.64999999999999
+            A 0.5,0.5,0,0,1,302.12777777777774,89.14999999999999
+            L 302.12777777777774,89.14999999999999
+            A 0.5,0.5,0,0,1,302.62777777777774,89.64999999999999
+            L 302.62777777777774,103.5
+            A 0.5,0.5,0,0,1,302.12777777777774,104
+            L 302.12777777777774,104
+            A 0.5,0.5,0,0,1,301.62777777777774,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="297.25" y="95.75" width="1" height="8.25" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 297.25,96.25
+            A 0.5,0.5,0,0,1,297.75,95.75
+            L 297.75,95.75
+            A 0.5,0.5,0,0,1,298.25,96.25
+            L 298.25,103.5
+            A 0.5,0.5,0,0,1,297.75,104
+            L 297.75,104
+            A 0.5,0.5,0,0,1,297.25,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="292.8722222222222" y="85.85000000000001" width="1" height="18.14999999999999" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 292.8722222222222,86.35000000000001
+            A 0.5,0.5,0,0,1,293.3722222222222,85.85000000000001
+            L 293.3722222222222,85.85000000000001
+            A 0.5,0.5,0,0,1,293.8722222222222,86.35000000000001
+            L 293.8722222222222,103.5
+            A 0.5,0.5,0,0,1,293.3722222222222,104
+            L 293.3722222222222,104
+            A 0.5,0.5,0,0,1,292.8722222222222,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="288.4944444444444" y="70.175" width="1" height="33.825" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 288.4944444444444,70.675
+            A 0.5,0.5,0,0,1,288.9944444444444,70.175
+            L 288.9944444444444,70.175
+            A 0.5,0.5,0,0,1,289.4944444444444,70.675
+            L 289.4944444444444,103.5
+            A 0.5,0.5,0,0,1,288.9944444444444,104
+            L 288.9944444444444,104
+            A 0.5,0.5,0,0,1,288.4944444444444,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="284.1166666666667" y="83.375" width="1" height="20.625" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 284.1166666666667,83.875
+            A 0.5,0.5,0,0,1,284.6166666666667,83.375
+            L 284.6166666666667,83.375
+            A 0.5,0.5,0,0,1,285.1166666666667,83.875
+            L 285.1166666666667,103.5
+            A 0.5,0.5,0,0,1,284.6166666666667,104
+            L 284.6166666666667,104
+            A 0.5,0.5,0,0,1,284.1166666666667,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="279.7388888888889" y="53.675000000000004" width="1" height="50.324999999999996" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 279.7388888888889,54.175000000000004
+            A 0.5,0.5,0,0,1,280.2388888888889,53.675000000000004
+            L 280.2388888888889,53.675000000000004
+            A 0.5,0.5,0,0,1,280.7388888888889,54.175000000000004
+            L 280.7388888888889,103.5
+            A 0.5,0.5,0,0,1,280.2388888888889,104
+            L 280.2388888888889,104
+            A 0.5,0.5,0,0,1,279.7388888888889,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="275.3611111111111" y="40.474999999999994" width="1" height="63.525000000000006" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 275.3611111111111,40.974999999999994
+            A 0.5,0.5,0,0,1,275.8611111111111,40.474999999999994
+            L 275.8611111111111,40.474999999999994
+            A 0.5,0.5,0,0,1,276.3611111111111,40.974999999999994
+            L 276.3611111111111,103.5
+            A 0.5,0.5,0,0,1,275.8611111111111,104
+            L 275.8611111111111,104
+            A 0.5,0.5,0,0,1,275.3611111111111,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="270.98333333333335" y="66.05000000000001" width="1" height="37.94999999999999" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 270.98333333333335,66.55000000000001
+            A 0.5,0.5,0,0,1,271.48333333333335,66.05000000000001
+            L 271.48333333333335,66.05000000000001
+            A 0.5,0.5,0,0,1,271.98333333333335,66.55000000000001
+            L 271.98333333333335,103.5
+            A 0.5,0.5,0,0,1,271.48333333333335,104
+            L 271.48333333333335,104
+            A 0.5,0.5,0,0,1,270.98333333333335,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="266.6055555555555" y="77.60000000000001" width="1" height="26.39999999999999" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 266.6055555555555,78.10000000000001
+            A 0.5,0.5,0,0,1,267.1055555555555,77.60000000000001
+            L 267.1055555555555,77.60000000000001
+            A 0.5,0.5,0,0,1,267.6055555555555,78.10000000000001
+            L 267.6055555555555,103.5
+            A 0.5,0.5,0,0,1,267.1055555555555,104
+            L 267.1055555555555,104
+            A 0.5,0.5,0,0,1,266.6055555555555,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="262.22777777777776" y="44.6" width="1" height="59.4" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 262.22777777777776,45.1
+            A 0.5,0.5,0,0,1,262.72777777777776,44.6
+            L 262.72777777777776,44.6
+            A 0.5,0.5,0,0,1,263.22777777777776,45.1
+            L 263.22777777777776,103.5
+            A 0.5,0.5,0,0,1,262.72777777777776,104
+            L 262.72777777777776,104
+            A 0.5,0.5,0,0,1,262.22777777777776,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="257.85" y="60.275000000000006" width="1" height="43.724999999999994" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 257.85,60.775000000000006
+            A 0.5,0.5,0,0,1,258.35,60.275000000000006
+            L 258.35,60.275000000000006
+            A 0.5,0.5,0,0,1,258.85,60.775000000000006
+            L 258.85,103.5
+            A 0.5,0.5,0,0,1,258.35,104
+            L 258.35,104
+            A 0.5,0.5,0,0,1,257.85,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="253.4722222222222" y="52.025" width="1" height="51.975" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 253.4722222222222,52.525
+            A 0.5,0.5,0,0,1,253.9722222222222,52.025
+            L 253.9722222222222,52.025
+            A 0.5,0.5,0,0,1,254.4722222222222,52.525
+            L 254.4722222222222,103.5
+            A 0.5,0.5,0,0,1,253.9722222222222,104
+            L 253.9722222222222,104
+            A 0.5,0.5,0,0,1,253.4722222222222,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="249.09444444444443" y="57.800000000000004" width="1" height="46.199999999999996" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 249.09444444444443,58.300000000000004
+            A 0.5,0.5,0,0,1,249.59444444444443,57.800000000000004
+            L 249.59444444444443,57.800000000000004
+            A 0.5,0.5,0,0,1,250.09444444444443,58.300000000000004
+            L 250.09444444444443,103.5
+            A 0.5,0.5,0,0,1,249.59444444444443,104
+            L 249.59444444444443,104
+            A 0.5,0.5,0,0,1,249.09444444444443,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="244.71666666666664" y="36.349999999999994" width="1" height="67.65" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 244.71666666666664,36.849999999999994
+            A 0.5,0.5,0,0,1,245.21666666666664,36.349999999999994
+            L 245.21666666666664,36.349999999999994
+            A 0.5,0.5,0,0,1,245.71666666666664,36.849999999999994
+            L 245.71666666666664,103.5
+            A 0.5,0.5,0,0,1,245.21666666666664,104
+            L 245.21666666666664,104
+            A 0.5,0.5,0,0,1,244.71666666666664,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="240.33888888888887" y="66.05000000000001" width="1" height="37.94999999999999" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 240.33888888888887,66.55000000000001
+            A 0.5,0.5,0,0,1,240.83888888888887,66.05000000000001
+            L 240.83888888888887,66.05000000000001
+            A 0.5,0.5,0,0,1,241.33888888888887,66.55000000000001
+            L 241.33888888888887,103.5
+            A 0.5,0.5,0,0,1,240.83888888888887,104
+            L 240.83888888888887,104
+            A 0.5,0.5,0,0,1,240.33888888888887,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="235.96111111111108" y="51.199999999999996" width="1" height="52.800000000000004" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 235.96111111111108,51.699999999999996
+            A 0.5,0.5,0,0,1,236.46111111111108,51.199999999999996
+            L 236.46111111111108,51.199999999999996
+            A 0.5,0.5,0,0,1,236.96111111111108,51.699999999999996
+            L 236.96111111111108,103.5
+            A 0.5,0.5,0,0,1,236.46111111111108,104
+            L 236.46111111111108,104
+            A 0.5,0.5,0,0,1,235.96111111111108,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="231.58333333333331" y="90.80000000000001" width="1" height="13.199999999999989" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 231.58333333333331,91.30000000000001
+            A 0.5,0.5,0,0,1,232.08333333333331,90.80000000000001
+            L 232.08333333333331,90.80000000000001
+            A 0.5,0.5,0,0,1,232.58333333333331,91.30000000000001
+            L 232.58333333333331,103.5
+            A 0.5,0.5,0,0,1,232.08333333333331,104
+            L 232.08333333333331,104
+            A 0.5,0.5,0,0,1,231.58333333333331,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="227.20555555555555" y="101.52499999999999" width="1" height="2.4750000000000085" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 227.20555555555555,102.02499999999999
+            A 0.5,0.5,0,0,1,227.70555555555555,101.52499999999999
+            L 227.70555555555555,101.52499999999999
+            A 0.5,0.5,0,0,1,228.20555555555555,102.02499999999999
+            L 228.20555555555555,103.5
+            A 0.5,0.5,0,0,1,227.70555555555555,104
+            L 227.70555555555555,104
+            A 0.5,0.5,0,0,1,227.20555555555555,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="222.82777777777775" y="94.925" width="1" height="9.075000000000003" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 222.82777777777775,95.425
+            A 0.5,0.5,0,0,1,223.32777777777775,94.925
+            L 223.32777777777775,94.925
+            A 0.5,0.5,0,0,1,223.82777777777775,95.425
+            L 223.82777777777775,103.5
+            A 0.5,0.5,0,0,1,223.32777777777775,104
+            L 223.32777777777775,104
+            A 0.5,0.5,0,0,1,222.82777777777775,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="218.45" y="98.22500000000001" width="1" height="5.7749999999999915" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 218.45,98.72500000000001
+            A 0.5,0.5,0,0,1,218.95,98.22500000000001
+            L 218.95,98.22500000000001
+            A 0.5,0.5,0,0,1,219.45,98.72500000000001
+            L 219.45,103.5
+            A 0.5,0.5,0,0,1,218.95,104
+            L 218.95,104
+            A 0.5,0.5,0,0,1,218.45,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="214.0722222222222" y="73.47500000000001" width="1" height="30.52499999999999" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 214.0722222222222,73.97500000000001
+            A 0.5,0.5,0,0,1,214.5722222222222,73.47500000000001
+            L 214.5722222222222,73.47500000000001
+            A 0.5,0.5,0,0,1,215.0722222222222,73.97500000000001
+            L 215.0722222222222,103.5
+            A 0.5,0.5,0,0,1,214.5722222222222,104
+            L 214.5722222222222,104
+            A 0.5,0.5,0,0,1,214.0722222222222,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="209.69444444444443" y="65.22500000000001" width="1" height="38.77499999999999" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 209.69444444444443,65.72500000000001
+            A 0.5,0.5,0,0,1,210.19444444444443,65.22500000000001
+            L 210.19444444444443,65.22500000000001
+            A 0.5,0.5,0,0,1,210.69444444444443,65.72500000000001
+            L 210.69444444444443,103.5
+            A 0.5,0.5,0,0,1,210.19444444444443,104
+            L 210.19444444444443,104
+            A 0.5,0.5,0,0,1,209.69444444444443,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="205.31666666666663" y="80.07499999999999" width="1" height="23.92500000000001" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 205.31666666666663,80.57499999999999
+            A 0.5,0.5,0,0,1,205.81666666666663,80.07499999999999
+            L 205.81666666666663,80.07499999999999
+            A 0.5,0.5,0,0,1,206.31666666666663,80.57499999999999
+            L 206.31666666666663,103.5
+            A 0.5,0.5,0,0,1,205.81666666666663,104
+            L 205.81666666666663,104
+            A 0.5,0.5,0,0,1,205.31666666666663,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="200.93888888888887" y="96.575" width="1" height="7.424999999999997" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 200.93888888888887,97.075
+            A 0.5,0.5,0,0,1,201.43888888888887,96.575
+            L 201.43888888888887,96.575
+            A 0.5,0.5,0,0,1,201.93888888888887,97.075
+            L 201.93888888888887,103.5
+            A 0.5,0.5,0,0,1,201.43888888888887,104
+            L 201.43888888888887,104
+            A 0.5,0.5,0,0,1,200.93888888888887,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="196.56111111111107" y="97.39999999999999" width="1" height="6.6000000000000085" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 196.56111111111107,97.89999999999999
+            A 0.5,0.5,0,0,1,197.06111111111107,97.39999999999999
+            L 197.06111111111107,97.39999999999999
+            A 0.5,0.5,0,0,1,197.56111111111107,97.89999999999999
+            L 197.56111111111107,103.5
+            A 0.5,0.5,0,0,1,197.06111111111107,104
+            L 197.06111111111107,104
+            A 0.5,0.5,0,0,1,196.56111111111107,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="192.1833333333333" y="85.02499999999999" width="1" height="18.97500000000001" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 192.1833333333333,85.52499999999999
+            A 0.5,0.5,0,0,1,192.6833333333333,85.02499999999999
+            L 192.6833333333333,85.02499999999999
+            A 0.5,0.5,0,0,1,193.1833333333333,85.52499999999999
+            L 193.1833333333333,103.5
+            A 0.5,0.5,0,0,1,192.6833333333333,104
+            L 192.6833333333333,104
+            A 0.5,0.5,0,0,1,192.1833333333333,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="187.80555555555554" y="67.69999999999999" width="1" height="36.30000000000001" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 187.80555555555554,68.19999999999999
+            A 0.5,0.5,0,0,1,188.30555555555554,67.69999999999999
+            L 188.30555555555554,67.69999999999999
+            A 0.5,0.5,0,0,1,188.80555555555554,68.19999999999999
+            L 188.80555555555554,103.5
+            A 0.5,0.5,0,0,1,188.30555555555554,104
+            L 188.30555555555554,104
+            A 0.5,0.5,0,0,1,187.80555555555554,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="183.42777777777775" y="68.52499999999999" width="1" height="35.47500000000001" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 183.42777777777775,69.02499999999999
+            A 0.5,0.5,0,0,1,183.92777777777775,68.52499999999999
+            L 183.92777777777775,68.52499999999999
+            A 0.5,0.5,0,0,1,184.42777777777775,69.02499999999999
+            L 184.42777777777775,103.5
+            A 0.5,0.5,0,0,1,183.92777777777775,104
+            L 183.92777777777775,104
+            A 0.5,0.5,0,0,1,183.42777777777775,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="179.04999999999995" y="71.825" width="1" height="32.175" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 179.04999999999995,72.325
+            A 0.5,0.5,0,0,1,179.54999999999995,71.825
+            L 179.54999999999995,71.825
+            A 0.5,0.5,0,0,1,180.04999999999995,72.325
+            L 180.04999999999995,103.5
+            A 0.5,0.5,0,0,1,179.54999999999995,104
+            L 179.54999999999995,104
+            A 0.5,0.5,0,0,1,179.04999999999995,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="174.6722222222222" y="85.85000000000001" width="1" height="18.14999999999999" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 174.6722222222222,86.35000000000001
+            A 0.5,0.5,0,0,1,175.1722222222222,85.85000000000001
+            L 175.1722222222222,85.85000000000001
+            A 0.5,0.5,0,0,1,175.6722222222222,86.35000000000001
+            L 175.6722222222222,103.5
+            A 0.5,0.5,0,0,1,175.1722222222222,104
+            L 175.1722222222222,104
+            A 0.5,0.5,0,0,1,174.6722222222222,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="170.29444444444442" y="91.625" width="1" height="12.375" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 170.29444444444442,92.125
+            A 0.5,0.5,0,0,1,170.79444444444442,91.625
+            L 170.79444444444442,91.625
+            A 0.5,0.5,0,0,1,171.29444444444442,92.125
+            L 171.29444444444442,103.5
+            A 0.5,0.5,0,0,1,170.79444444444442,104
+            L 170.79444444444442,104
+            A 0.5,0.5,0,0,1,170.29444444444442,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="165.91666666666663" y="73.47500000000001" width="1" height="30.52499999999999" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 165.91666666666663,73.97500000000001
+            A 0.5,0.5,0,0,1,166.41666666666663,73.47500000000001
+            L 166.41666666666663,73.47500000000001
+            A 0.5,0.5,0,0,1,166.91666666666663,73.97500000000001
+            L 166.91666666666663,103.5
+            A 0.5,0.5,0,0,1,166.41666666666663,104
+            L 166.41666666666663,104
+            A 0.5,0.5,0,0,1,165.91666666666663,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="161.53888888888886" y="75.95" width="1" height="28.049999999999997" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 161.53888888888886,76.45
+            A 0.5,0.5,0,0,1,162.03888888888886,75.95
+            L 162.03888888888886,75.95
+            A 0.5,0.5,0,0,1,162.53888888888886,76.45
+            L 162.53888888888886,103.5
+            A 0.5,0.5,0,0,1,162.03888888888886,104
+            L 162.03888888888886,104
+            A 0.5,0.5,0,0,1,161.53888888888886,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="157.1611111111111" y="85.85000000000001" width="1" height="18.14999999999999" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 157.1611111111111,86.35000000000001
+            A 0.5,0.5,0,0,1,157.6611111111111,85.85000000000001
+            L 157.6611111111111,85.85000000000001
+            A 0.5,0.5,0,0,1,158.1611111111111,86.35000000000001
+            L 158.1611111111111,103.5
+            A 0.5,0.5,0,0,1,157.6611111111111,104
+            L 157.6611111111111,104
+            A 0.5,0.5,0,0,1,157.1611111111111,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="152.7833333333333" y="86.675" width="1" height="17.325000000000003" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 152.7833333333333,87.175
+            A 0.5,0.5,0,0,1,153.2833333333333,86.675
+            L 153.2833333333333,86.675
+            A 0.5,0.5,0,0,1,153.7833333333333,87.175
+            L 153.7833333333333,103.5
+            A 0.5,0.5,0,0,1,153.2833333333333,104
+            L 153.2833333333333,104
+            A 0.5,0.5,0,0,1,152.7833333333333,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="148.4055555555555" y="35.525000000000006" width="1" height="68.475" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 148.4055555555555,36.025000000000006
+            A 0.5,0.5,0,0,1,148.9055555555555,35.525000000000006
+            L 148.9055555555555,35.525000000000006
+            A 0.5,0.5,0,0,1,149.4055555555555,36.025000000000006
+            L 149.4055555555555,103.5
+            A 0.5,0.5,0,0,1,148.9055555555555,104
+            L 148.9055555555555,104
+            A 0.5,0.5,0,0,1,148.4055555555555,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="144.02777777777774" y="70.175" width="1" height="33.825" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 144.02777777777774,70.675
+            A 0.5,0.5,0,0,1,144.52777777777774,70.175
+            L 144.52777777777774,70.175
+            A 0.5,0.5,0,0,1,145.02777777777774,70.675
+            L 145.02777777777774,103.5
+            A 0.5,0.5,0,0,1,144.52777777777774,104
+            L 144.52777777777774,104
+            A 0.5,0.5,0,0,1,144.02777777777774,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="139.64999999999998" y="88.325" width="1" height="15.674999999999997" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 139.64999999999998,88.825
+            A 0.5,0.5,0,0,1,140.14999999999998,88.325
+            L 140.14999999999998,88.325
+            A 0.5,0.5,0,0,1,140.64999999999998,88.825
+            L 140.64999999999998,103.5
+            A 0.5,0.5,0,0,1,140.14999999999998,104
+            L 140.14999999999998,104
+            A 0.5,0.5,0,0,1,139.64999999999998,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="135.27222222222218" y="90.80000000000001" width="1" height="13.199999999999989" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 135.27222222222218,91.30000000000001
+            A 0.5,0.5,0,0,1,135.77222222222218,90.80000000000001
+            L 135.77222222222218,90.80000000000001
+            A 0.5,0.5,0,0,1,136.27222222222218,91.30000000000001
+            L 136.27222222222218,103.5
+            A 0.5,0.5,0,0,1,135.77222222222218,104
+            L 135.77222222222218,104
+            A 0.5,0.5,0,0,1,135.27222222222218,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="130.89444444444442" y="63.574999999999996" width="1" height="40.425000000000004" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 130.89444444444442,64.07499999999999
+            A 0.5,0.5,0,0,1,131.39444444444442,63.574999999999996
+            L 131.39444444444442,63.574999999999996
+            A 0.5,0.5,0,0,1,131.89444444444442,64.07499999999999
+            L 131.89444444444442,103.5
+            A 0.5,0.5,0,0,1,131.39444444444442,104
+            L 131.39444444444442,104
+            A 0.5,0.5,0,0,1,130.89444444444442,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="126.51666666666665" y="91.625" width="1" height="12.375" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 126.51666666666665,92.125
+            A 0.5,0.5,0,0,1,127.01666666666665,91.625
+            L 127.01666666666665,91.625
+            A 0.5,0.5,0,0,1,127.51666666666665,92.125
+            L 127.51666666666665,103.5
+            A 0.5,0.5,0,0,1,127.01666666666665,104
+            L 127.01666666666665,104
+            A 0.5,0.5,0,0,1,126.51666666666665,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="122.13888888888887" y="74.3" width="1" height="29.700000000000003" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 122.13888888888887,74.8
+            A 0.5,0.5,0,0,1,122.63888888888887,74.3
+            L 122.63888888888887,74.3
+            A 0.5,0.5,0,0,1,123.13888888888887,74.8
+            L 123.13888888888887,103.5
+            A 0.5,0.5,0,0,1,122.63888888888887,104
+            L 122.63888888888887,104
+            A 0.5,0.5,0,0,1,122.13888888888887,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="117.76111111111109" y="74.3" width="1" height="29.700000000000003" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 117.76111111111109,74.8
+            A 0.5,0.5,0,0,1,118.26111111111109,74.3
+            L 118.26111111111109,74.3
+            A 0.5,0.5,0,0,1,118.76111111111109,74.8
+            L 118.76111111111109,103.5
+            A 0.5,0.5,0,0,1,118.26111111111109,104
+            L 118.26111111111109,104
+            A 0.5,0.5,0,0,1,117.76111111111109,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="113.38333333333331" y="89.97500000000001" width="1" height="14.024999999999991" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 113.38333333333331,90.47500000000001
+            A 0.5,0.5,0,0,1,113.88333333333331,89.97500000000001
+            L 113.88333333333331,89.97500000000001
+            A 0.5,0.5,0,0,1,114.38333333333331,90.47500000000001
+            L 114.38333333333331,103.5
+            A 0.5,0.5,0,0,1,113.88333333333331,104
+            L 113.88333333333331,104
+            A 0.5,0.5,0,0,1,113.38333333333331,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="109.00555555555555" y="49.55" width="1" height="54.45" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 109.00555555555555,50.05
+            A 0.5,0.5,0,0,1,109.50555555555555,49.55
+            L 109.50555555555555,49.55
+            A 0.5,0.5,0,0,1,110.00555555555555,50.05
+            L 110.00555555555555,103.5
+            A 0.5,0.5,0,0,1,109.50555555555555,104
+            L 109.50555555555555,104
+            A 0.5,0.5,0,0,1,109.00555555555555,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="104.62777777777775" y="77.60000000000001" width="1" height="26.39999999999999" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 104.62777777777775,78.10000000000001
+            A 0.5,0.5,0,0,1,105.12777777777775,77.60000000000001
+            L 105.12777777777775,77.60000000000001
+            A 0.5,0.5,0,0,1,105.62777777777775,78.10000000000001
+            L 105.62777777777775,103.5
+            A 0.5,0.5,0,0,1,105.12777777777775,104
+            L 105.12777777777775,104
+            A 0.5,0.5,0,0,1,104.62777777777775,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="100.24999999999999" y="56.14999999999999" width="1" height="47.85000000000001" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 100.24999999999999,56.64999999999999
+            A 0.5,0.5,0,0,1,100.74999999999999,56.14999999999999
+            L 100.74999999999999,56.14999999999999
+            A 0.5,0.5,0,0,1,101.24999999999999,56.64999999999999
+            L 101.24999999999999,103.5
+            A 0.5,0.5,0,0,1,100.74999999999999,104
+            L 100.74999999999999,104
+            A 0.5,0.5,0,0,1,100.24999999999999,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="95.8722222222222" y="79.25" width="1" height="24.75" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 95.8722222222222,79.75
+            A 0.5,0.5,0,0,1,96.3722222222222,79.25
+            L 96.3722222222222,79.25
+            A 0.5,0.5,0,0,1,96.8722222222222,79.75
+            L 96.8722222222222,103.5
+            A 0.5,0.5,0,0,1,96.3722222222222,104
+            L 96.3722222222222,104
+            A 0.5,0.5,0,0,1,95.8722222222222,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="91.49444444444443" y="85.02499999999999" width="1" height="18.97500000000001" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 91.49444444444443,85.52499999999999
+            A 0.5,0.5,0,0,1,91.99444444444443,85.02499999999999
+            L 91.99444444444443,85.02499999999999
+            A 0.5,0.5,0,0,1,92.49444444444443,85.52499999999999
+            L 92.49444444444443,103.5
+            A 0.5,0.5,0,0,1,91.99444444444443,104
+            L 91.99444444444443,104
+            A 0.5,0.5,0,0,1,91.49444444444443,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="87.11666666666665" y="71.825" width="1" height="32.175" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 87.11666666666665,72.325
+            A 0.5,0.5,0,0,1,87.61666666666665,71.825
+            L 87.61666666666665,71.825
+            A 0.5,0.5,0,0,1,88.11666666666665,72.325
+            L 88.11666666666665,103.5
+            A 0.5,0.5,0,0,1,87.61666666666665,104
+            L 87.61666666666665,104
+            A 0.5,0.5,0,0,1,87.11666666666665,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="82.73888888888887" y="67.69999999999999" width="1" height="36.30000000000001" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 82.73888888888887,68.19999999999999
+            A 0.5,0.5,0,0,1,83.23888888888887,67.69999999999999
+            L 83.23888888888887,67.69999999999999
+            A 0.5,0.5,0,0,1,83.73888888888887,68.19999999999999
+            L 83.73888888888887,103.5
+            A 0.5,0.5,0,0,1,83.23888888888887,104
+            L 83.23888888888887,104
+            A 0.5,0.5,0,0,1,82.73888888888887,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="78.36111111111109" y="89.97500000000001" width="1" height="14.024999999999991" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 78.36111111111109,90.47500000000001
+            A 0.5,0.5,0,0,1,78.86111111111109,89.97500000000001
+            L 78.86111111111109,89.97500000000001
+            A 0.5,0.5,0,0,1,79.36111111111109,90.47500000000001
+            L 79.36111111111109,103.5
+            A 0.5,0.5,0,0,1,78.86111111111109,104
+            L 78.86111111111109,104
+            A 0.5,0.5,0,0,1,78.36111111111109,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="73.9833333333333" y="61.925" width="1" height="42.075" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 73.9833333333333,62.425
+            A 0.5,0.5,0,0,1,74.4833333333333,61.925
+            L 74.4833333333333,61.925
+            A 0.5,0.5,0,0,1,74.9833333333333,62.425
+            L 74.9833333333333,103.5
+            A 0.5,0.5,0,0,1,74.4833333333333,104
+            L 74.4833333333333,104
+            A 0.5,0.5,0,0,1,73.9833333333333,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="69.60555555555554" y="85.02499999999999" width="1" height="18.97500000000001" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 69.60555555555554,85.52499999999999
+            A 0.5,0.5,0,0,1,70.10555555555554,85.02499999999999
+            L 70.10555555555554,85.02499999999999
+            A 0.5,0.5,0,0,1,70.60555555555554,85.52499999999999
+            L 70.60555555555554,103.5
+            A 0.5,0.5,0,0,1,70.10555555555554,104
+            L 70.10555555555554,104
+            A 0.5,0.5,0,0,1,69.60555555555554,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="65.22777777777775" y="42.125" width="1" height="61.875" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 65.22777777777775,42.625
+            A 0.5,0.5,0,0,1,65.72777777777775,42.125
+            L 65.72777777777775,42.125
+            A 0.5,0.5,0,0,1,66.22777777777775,42.625
+            L 66.22777777777775,103.5
+            A 0.5,0.5,0,0,1,65.72777777777775,104
+            L 65.72777777777775,104
+            A 0.5,0.5,0,0,1,65.22777777777775,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="60.84999999999997" y="43.775000000000006" width="1" height="60.224999999999994" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 60.84999999999997,44.275000000000006
+            A 0.5,0.5,0,0,1,61.34999999999997,43.775000000000006
+            L 61.34999999999997,43.775000000000006
+            A 0.5,0.5,0,0,1,61.84999999999997,44.275000000000006
+            L 61.84999999999997,103.5
+            A 0.5,0.5,0,0,1,61.34999999999997,104
+            L 61.34999999999997,104
+            A 0.5,0.5,0,0,1,60.84999999999997,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="56.47222222222219" y="10.775000000000006" width="1" height="93.225" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 56.47222222222219,11.275000000000006
+            A 0.5,0.5,0,0,1,56.97222222222219,10.775000000000006
+            L 56.97222222222219,10.775000000000006
+            A 0.5,0.5,0,0,1,57.47222222222219,11.275000000000006
+            L 57.47222222222219,103.5
+            A 0.5,0.5,0,0,1,56.97222222222219,104
+            L 56.97222222222219,104
+            A 0.5,0.5,0,0,1,56.47222222222219,103.5 Z"></path></g><g class="recharts-layer recharts-bar-rectangle"><path x="52.09444444444441" y="28.099999999999994" width="1" height="75.9" radius="2" fill="var(--color-Replies)" stroke-width="3" class="recharts-rectangle" d="M 52.09444444444441,28.599999999999994
+            A 0.5,0.5,0,0,1,52.59444444444441,28.099999999999994
+            L 52.59444444444441,28.099999999999994
+            A 0.5,0.5,0,0,1,53.09444444444441,28.599999999999994
+            L 53.09444444444441,103.5
+            A 0.5,0.5,0,0,1,52.59444444444441,104
+            L 52.59444444444441,104
+            A 0.5,0.5,0,0,1,52.09444444444441,103.5 Z"></path></g></g></g><g class="recharts-layer"></g></g><g class="recharts-layer recharts-cartesian-axis recharts-xAxis xAxis text-subtext3"><g class="recharts-cartesian-axis-ticks"><g class="recharts-layer recharts-cartesian-axis-tick"><text orientation="bottom" width="394" height="30" stroke="none" x="366.76666666666665" y="118" class="recharts-text recharts-cartesian-axis-tick-value" text-anchor="middle" fill="#666"><tspan x="366.76666666666665" dy="0.71em">Mar 1</tspan></text></g><g class="recharts-layer recharts-cartesian-axis-tick"><text orientation="bottom" width="394" height="30" stroke="none" x="301.09999999999997" y="118" class="recharts-text recharts-cartesian-axis-tick-value" text-anchor="middle" fill="#666"><tspan x="301.09999999999997" dy="0.71em">Feb 14</tspan></text></g><g class="recharts-layer recharts-cartesian-axis-tick"><text orientation="bottom" width="394" height="30" stroke="none" x="235.43333333333334" y="118" class="recharts-text recharts-cartesian-axis-tick-value" text-anchor="middle" fill="#666"><tspan x="235.43333333333334" dy="0.71em">Jan 30</tspan></text></g><g class="recharts-layer recharts-cartesian-axis-tick"><text orientation="bottom" width="394" height="30" stroke="none" x="169.76666666666665" y="118" class="recharts-text recharts-cartesian-axis-tick-value" text-anchor="middle" fill="#666"><tspan x="169.76666666666665" dy="0.71em">Jan 15</tspan></text></g><g class="recharts-layer recharts-cartesian-axis-tick"><text orientation="bottom" width="394" height="30" stroke="none" x="108.47777777777775" y="118" class="recharts-text recharts-cartesian-axis-tick-value" text-anchor="middle" fill="#666"><tspan x="108.47777777777775" dy="0.71em">Jan 1</tspan></text></g><g class="recharts-layer recharts-cartesian-axis-tick"><text orientation="bottom" width="394" height="30" stroke="none" x="47.18888888888886" y="118" class="recharts-text recharts-cartesian-axis-tick-value" text-anchor="middle" fill="#666"><tspan x="47.18888888888886" dy="0.71em">Dec 18</tspan></text></g></g></g></svg><div tabindex="-1" class="recharts-tooltip-wrapper recharts-tooltip-wrapper-right recharts-tooltip-wrapper-top" style="visibility: hidden; pointer-events: none; position: absolute; top: 0px; left: 0px; transform: translate(136.611px, 5px);"></div></div></div></div><div class="bg-gray-0/50 pointer-events-none absolute inset-0 flex items-center justify-center transition-opacity delay-100 duration-200 opacity-0"><div aria-hidden="true" class="flex w-full items-center justify-center"><div class="animate-spin h-9 w-9"><svg height="100%" viewBox="0 0 32 32" width="100%"><circle class="opacity-20 stroke-primary" cx="16" cy="16" fill="none" r="14" stroke-width="4"></circle><circle class="stroke-primary" cx="16" cy="16" fill="none" r="14" stroke-dasharray="80" stroke-dashoffset="60" stroke-width="4"></circle></svg></div></div></div></div>

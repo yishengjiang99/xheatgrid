@@ -1,0 +1,12 @@
+{
+  "name": "xheatgrid",
+  "version": "0.2.0",
+  "private": true,
+  "description": "Chrome MV3 extension: GitHub-style heatmap of daily Posts and Replies from x.com/i/account_analytics",
+  "scripts": {
+    "test": "node --test"
+  },
+  "devDependencies": {
+    "linkedom": "^0.18.13"
+  }
+}
